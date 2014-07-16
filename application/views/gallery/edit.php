@@ -12,15 +12,15 @@
       </tr>
     </table>
   </div>
-  <?php 
+  <?php
   echo $this->session->flashdata('msg'); ?>
   <div id="tbl" style="float:left;">
   <h3>Form</h3>
-   <?php if($rows->num_rows()>0){ 
+   <?php if($rows->num_rows()>0){
     $row = $rows->row();
     $id = $this->encrypt->encode($row->id_gallery);
   ?>
-  
+
   <div id="content_left">
 	<form id="gallery" method="post" name="gallery" action="<?php echo base_url('index.php/admin/gallery/update_data/'.$id); ?>" enctype="multipart/form-data">
 		<table width="95%">
@@ -45,7 +45,7 @@
 		</table>
   </form>
   </div>
-  
+
   <div id="content_right">
 		<div id="smallRight">
 		<h3>Detail </h3>
