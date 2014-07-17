@@ -1,11 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Vendor extends CI_Controller {
+class Partner extends CI_Controller {
 
   public function __construct()
   {
     parent::__construct();
-    $this->load->model('vendor_model','vendor');
+    $this->load->model('partner_model','partner');
     $this->load->library('simpleAuth');
     // $this->output->enable_profiler(TRUE);
   }
@@ -13,11 +13,11 @@ class Vendor extends CI_Controller {
   public function index()
   {
     $cekLogin = $this->simpleauth->cekBelumLogin();
-    $data['result'] = $this->vendor->get_all();
+    $data['result'] = $this->partner->get_all();
     $this->load->view('admin/head');
     $this->load->view('admin/header');
     $this->load->view('admin/menu');
-    $this->load->view('vendor/view_all',$data);
+    $this->load->view('partner/view_all',$data);
     $this->load->view('admin/footer');
   }
 
@@ -27,7 +27,7 @@ class Vendor extends CI_Controller {
     $this->load->view('admin/head');
     $this->load->view('admin/header');
     $this->load->view('admin/menu');
-    $this->load->view('vendor/input');
+    $this->load->view('partner/input');
     $this->load->view('admin/footer');
   }
 
@@ -35,28 +35,28 @@ class Vendor extends CI_Controller {
   {
     $id = $this->encrypt->decode($id_encrypt);
     $cekLogin = $this->simpleauth->cekBelumLogin();
-    $data['rows'] = $this->vendor->get_by_id($id);
+    $data['rows'] = $this->partner->get_by_id($id);
     $this->load->view('admin/head');
     $this->load->view('admin/header');
     $this->load->view('admin/menu');
-    $this->load->view('vendor/edit',$data);
+    $this->load->view('partner/edit',$data);
     $this->load->view('admin/footer');
   }
 
   public function view()
   {
     $id = $this->encrypt->decode($id_encrypt);
-    $this->load->view('vendor/view');
+    $this->load->view('partner/view');
   }
 
   public function save_data()
   {
     $this->form_validation->set_rules('judul', 'Title', 'required');
-    // $this->form_validation->set_rules('vendor', 'Image vendor', 'required');
+    // $this->form_validation->set_rules('partner', 'Image partner', 'required');
     if ($this->form_validation->run() == FALSE)
     {
       gagal(validation_errors());
-      redirect('admin/vendor/input/');
+      redirect('admin/partner/input/');
     }
     else
     {
@@ -66,7 +66,7 @@ class Vendor extends CI_Controller {
       $active = $this->input->post('active');
       $created = date("y-m-d");
       //upload gambar
-        $config['upload_path'] = './vendor/';
+        $config['upload_path'] = './partner/';
         $config['allowed_types'] = 'jpg|jpeg|png|gif';
         $config['max_size'] = '10240';
         $config['max_width'] = '2400';
@@ -79,18 +79,18 @@ class Vendor extends CI_Controller {
         if (!$upload1)
         {
           gagal($this->upload->display_errors());
-          redirect('admin/vendor/input/');
+          redirect('admin/partner/input/');
         }
 
-      $data = array('judul_vendor' =>$judul,'image' =>$image,'created_at' =>$created,'active_vendor' =>$active,
+      $data = array('judul_partner' =>$judul,'image' =>$image,'created_at' =>$created,'active_partner' =>$active,
         'link' =>$link);
-      $update = $this->vendor->insert_data($data);
+      $update = $this->partner->insert_data($data);
       if($update==TRUE){
           sukses('Data has Saved');
         }else{
           gagal('Data Failed to Save');
         }
-        redirect('admin/vendor/input/');
+        redirect('admin/partner/input/');
     }
   }
 
@@ -101,7 +101,7 @@ class Vendor extends CI_Controller {
     if ($this->form_validation->run() == FALSE)
     {
       gagal(validation_errors());
-      redirect('admin/vendor/edit/'.$id_encrypt);
+      redirect('admin/partner/edit/'.$id_encrypt);
     }
     else
     {
@@ -111,7 +111,7 @@ class Vendor extends CI_Controller {
       $link = $this->input->post('link');
       $active = $this->input->post('active');
       //upload gambar
-        $config['upload_path'] = './vendor/';
+        $config['upload_path'] = './partner/';
         $config['allowed_types'] = 'jpg|jpeg|png|gif';
         $config['max_size'] = '10240';
         $config['encrypt_name']  = TRUE;
@@ -123,21 +123,21 @@ class Vendor extends CI_Controller {
         {
           $image = $image2;
           // gagal($this->upload->display_errors());
-          // redirect('admin/vendor/edit/'.$id_encrypt);
+          // redirect('admin/partner/edit/'.$id_encrypt);
         }else{
-          $this->vendor->delete_img($id);
+          $this->partner->delete_img($id);
         }
       }
 
-      $data = array('judul_vendor' =>$judul,'image' =>$image,'created_at' =>$created,'active_vendor' =>$active,
+      $data = array('judul_partner' =>$judul,'image' =>$image,'created_at' =>$created,'active_partner' =>$active,
         'link' =>$link);
-      $update = $this->vendor->update($id,$data);
+      $update = $this->partner->update($id,$data);
       if($update==TRUE){
           sukses('Data has Saved');
         }else{
           gagal('Data Failed to Save');
         }
-        redirect('admin/vendor/edit/'.$id_encrypt);
+        redirect('admin/partner/edit/'.$id_encrypt);
     }
 
 public function publish($ket,$id='')
@@ -160,8 +160,8 @@ public function publish($ket,$id='')
 
        for($i=0; $i<=$jml-1;$i++){
          $idcheck = $this->encrypt->decode($checkid[$i]);
-         $data = array('active_vendor' => $aktif);
-         $update = $this->vendor->update($idcheck,$data);
+         $data = array('active_partner' => $aktif);
+         $update = $this->partner->update($idcheck,$data);
        }
 
        if($update){
@@ -171,14 +171,14 @@ public function publish($ket,$id='')
       }
     }else{
       $id = $this->encrypt->decode($id);
-      $data = array('active_vendor' => $aktif);
-      $update = $this->vendor->update($id,$data);
+      $data = array('active_partner' => $aktif);
+      $update = $this->partner->update($id,$data);
       if($update){
         sukses("$msgsukes");
       }else{
         gagal("$msggagal");
       }
-      redirect('admin/vendor/');
+      redirect('admin/partner/');
       }
   }
 
@@ -187,13 +187,13 @@ public function publish($ket,$id='')
   if($id!='all')
    {
     $id = $this->encrypt->decode($id);
-    $delete = $this->vendor->delete($id);
+    $delete = $this->partner->delete($id);
       if($delete){
         sukses("Data Has Deleted!");
       }else{
         gagal("Data Failed to Deleted!");
       }
-      redirect('admin/vendor/');
+      redirect('admin/partner/');
    }
    else
    {
@@ -203,7 +203,7 @@ public function publish($ket,$id='')
 
        for($i=0; $i<=$jml-1;$i++){
          $idcheck = $this->encrypt->decode($checkid[$i]);
-         $delete = $this->vendor->delete($idcheck);
+         $delete = $this->partner->delete($idcheck);
        }
     if($delete){
       sukses("Data Has Deleted!");
@@ -214,5 +214,5 @@ public function publish($ket,$id='')
   }
 }
 
-/* End of file vendor.php */
-/* Location: ./application/controllers/admin/vendor.php */
+/* End of file partner.php */
+/* Location: ./application/controllers/admin/partner.php */

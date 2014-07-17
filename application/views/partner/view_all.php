@@ -14,7 +14,7 @@ $(document).ready(function() {
    })
    if(a>0){
      if(confirm("Are you sure want to publish?")){
-      $.post("<?php echo base_url(); ?>admin/vendor/publish/yes/",{checkid:ids});
+      $.post("<?php echo base_url(); ?>admin/partner/publish/yes/",{checkid:ids});
       setTimeout(function(){ location.reload(); $('.checkid').removeAttr('checked'); }, 1000);
      }
     }else{
@@ -30,7 +30,7 @@ $(document).ready(function() {
    })
    if(a>0){
      if(confirm("Are you sure want to unpublish?")){
-      $.post("<?php echo base_url(); ?>admin/vendor/publish/no/",{checkid:ids});
+      $.post("<?php echo base_url(); ?>admin/partner/publish/no/",{checkid:ids});
       setTimeout(function(){ location.reload(); $('.checkid').removeAttr('checked'); }, 1000);
      }
     }else{
@@ -46,7 +46,7 @@ $(document).ready(function() {
    })
    if(a>0){
      if(confirm("Are you sure want to Delete?")){
-      $.post("<?php echo base_url(); ?>admin/vendor/delete_data/all/",{checkid:ids});
+      $.post("<?php echo base_url(); ?>admin/partner/delete_data/all/",{checkid:ids});
       setTimeout(function(){ location.reload(); $('.checkid').removeAttr('checked'); }, 1000);
      }
     }else{
@@ -70,14 +70,14 @@ $('.fancybox').fancybox();
     <table width="100%" border="0">
       <tr>
         <td width="70%">&nbsp;</td>
-        <td width="6%"><div align="center"><a href="<?php echo base_url('admin/vendor/input/');?>"><img src="<?php echo base_url('asset/images/admin/img/add.png');?>" width="40"></a></div></td>
+        <td width="6%"><div align="center"><a href="<?php echo base_url('admin/partner/input/');?>"><img src="<?php echo base_url('asset/images/admin/img/add.png');?>" width="40"></a></div></td>
         <td width="6%"><div align="center"><a href="#" id='publish'><img src="<?php echo base_url('asset/images/admin/img/icon3.png');?>" width="40"></a></div></td>
         <td width="6%"><div align="center"><a href="#" id='unpublish'><img src="<?php echo base_url('asset/images/admin/img/icon2.png');?>" width="40"></a></div></td>
         <td width="6%"><div align="center"><a href="#" id='delete'><img src="<?php echo base_url('asset/images/admin/img/trash.png');?>" width="40"></a></div></td>
       </tr>
       <tr>
         <td>&nbsp;</td>
-        <td><div align="center" id="blue">Add Vendor </div></td>
+        <td><div align="center" id="blue">Add Partner </div></td>
 
         <td><div align="center" id="blue">Publish </div></td>
         <td><div align="center" id="blue">Upublish </div></td>
@@ -87,7 +87,7 @@ $('.fancybox').fancybox();
   </div>
   <?php echo $this->session->flashdata('msg'); ?>
   <div id="tbl">
-  <h3>Vendor Manager</h3>
+  <h3>Partner Manager</h3>
     <div id="tablewrapper">
         <div id="tableheader">
       `<div class="search">
@@ -115,27 +115,27 @@ $('.fancybox').fancybox();
               <?php
               if($result->num_rows()>0){
                foreach ($result->result() as $key => $gal) {
-                $id_encrypt = $this->encrypt->encode($gal->id_vendor);
+                $id_encrypt = $this->encrypt->encode($gal->id_partner);
               ?>
                 <tr>
                     <td><input type="checkbox" name="checkid[]" class='checkid' value="<?php echo $id_encrypt; ?>" />
                     </td>
                     <td><?php echo $key+1; ?></td>
-                    <td><?php echo $gal->judul_vendor; ?></td>
+                    <td><?php echo $gal->judul_partner; ?></td>
                     <td>
                       <div align="center">
-                      <?php if($gal->active_vendor==0){ ?>
-                        <a href="<?php echo base_url().'admin/vendor/publish/yes/'.$id_encrypt; ?>" onclick="return confirm('Do You Want To Active This Images?');"><img src="<?php echo base_url('asset/images/admin/img/delete.png');?>" title="Unpublish" width="16" height="16"></a>
+                      <?php if($gal->active_partner==0){ ?>
+                        <a href="<?php echo base_url().'admin/partner/publish/yes/'.$id_encrypt; ?>" onclick="return confirm('Do You Want To Active This Images?');"><img src="<?php echo base_url('asset/images/admin/img/delete.png');?>" title="Unpublish" width="16" height="16"></a>
                       <?php }else{ ?>
-                        <a href="<?php echo base_url().'admin/vendor/publish/no/'.$id_encrypt ?>" onclick="return confirm('Do You Want To Nonactive This Images');"><img src="<?php echo base_url('asset/images/admin/img/oke.png');?>" title="Publish"></a>
+                        <a href="<?php echo base_url().'admin/partner/publish/no/'.$id_encrypt ?>" onclick="return confirm('Do You Want To Nonactive This Images');"><img src="<?php echo base_url('asset/images/admin/img/oke.png');?>" title="Publish"></a>
                       <?php } ?>
                       </div>
                     </td>
                     <td><div align="center"><span id="orange"><?php echo $gal->created_at; ?></span> </div></td>
-                    <td><div align="center"><span id="orange"><a class="fancybox" href="<?php echo base_url('vendor/'.$gal->image); ?>" data-fancybox-group="vendor" title="<?php echo $gal->judul_vendor ?>"><img src="<?php echo base_url('vendor/'.$gal->image); ?>" class="thumbnail" id="view" idimage="<?php echo $id_encrypt; ?>"/></a></div></td>
-                    <td><div align="center"><a href="<?php echo base_url().'admin/vendor/delete_data/'.$id_encrypt; ?>" onclick="return confirm('Do You Want Delete This Row?')">
+                    <td><div align="center"><span id="orange"><a class="fancybox" href="<?php echo base_url('partner/'.$gal->image); ?>" data-fancybox-group="partner" title="<?php echo $gal->judul_partner ?>"><img src="<?php echo base_url('partner/'.$gal->image); ?>" class="thumbnail" id="view" idimage="<?php echo $id_encrypt; ?>"/></a></div></td>
+                    <td><div align="center"><a href="<?php echo base_url().'admin/partner/delete_data/'.$id_encrypt; ?>" onclick="return confirm('Do You Want Delete This Row?')">
                       <img src="<?php echo base_url('asset/images/admin/img/remove.png');?>" width="16" height="16" title="Delete"></a>
-                        <a href="<?php echo base_url().'admin/vendor/edit/'.$id_encrypt; ?>"><img src="<?php echo base_url('asset/images/admin/img/folderup_16.png');?>" width="16" height="16" title="Edit Data"></a>
+                        <a href="<?php echo base_url().'admin/partner/edit/'.$id_encrypt; ?>"><img src="<?php echo base_url('asset/images/admin/img/folderup_16.png');?>" width="16" height="16" title="Edit Data"></a>
                         </div></td>
                 </tr>
             <?php

@@ -16,7 +16,7 @@ class Page extends CI_Controller {
   {
     $bhs = $this->lang->lang();
     $data_banner['banners'] = $this->banner->get_all($bhs);
-    $data_content['rows'] = $this->content->get_by_alias('about-us');
+    $data_content['rows'] = $this->content->get_by_alias('about-us',$bhs);
     $this->load->view('home/head');
     $this->load->view('home/header');
     $this->load->view('home/menu');
@@ -29,7 +29,7 @@ class Page extends CI_Controller {
   {
     $bhs = $this->lang->lang();
     $data_banner['banners'] = $this->banner->get_all($bhs);
-    $data_content['rows'] = $this->content->get_by_alias('solution');
+    $data_content['rows'] = $this->content->get_by_alias('solution',$bhs);
     $this->load->view('home/head');
     $this->load->view('home/header');
     $this->load->view('home/menu');
@@ -42,7 +42,7 @@ class Page extends CI_Controller {
   {
     $bhs = $this->lang->lang();
     $data_banner['banners'] = $this->banner->get_all($bhs);
-    $data_content['rows'] = $this->content->get_by_alias('service');
+    $data_content['rows'] = $this->content->get_by_alias('service',$bhs);
     $this->load->view('home/head');
     $this->load->view('home/header');
     $this->load->view('home/menu');

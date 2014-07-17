@@ -51,7 +51,7 @@ function tempel(isi){
       </ul>
     </li>
     <li>
-      <a href="#">Partner & Client</a>
+      <a href="<?php echo base_url("$lang/client_partner"); ?>">Partner & Client</a>
     </li>
     <li>
       <a href="<?php echo base_url("$lang/careers"); ?>">Carrer</a>
