@@ -29,7 +29,7 @@ function tempel(isi){
           // foreach ($menus_0->result() as $m_0 => $menu_0) {
     ?>
     <li class='has-sub'>
-      <a href='#'>
+      <a href='<?php echo base_url("$lang/page/about_us"); ?>'>
         About Us
       </a>
     </li>
@@ -39,12 +39,12 @@ function tempel(isi){
       </a>
       <ul>
         <li class='has-sub'>
-          <a href="#">
+          <a href="<?php echo base_url("$lang/page/solution"); ?>">
             Solutions
           </a>
         </li>
         <li class='has-sub'>
-          <a href="#">
+          <a href="<?php echo base_url("$lang/page/service"); ?>">
             Services
           </a>
         </li>
@@ -54,10 +54,10 @@ function tempel(isi){
       <a href="#">Partner & Client</a>
     </li>
     <li>
-      <a href="#">Carrer</a>
+      <a href="<?php echo base_url("$lang/careers"); ?>">Carrer</a>
     </li>
     <li>
-      <a href="#">Contact Us</a>
+      <a href="<?php echo base_url("$lang/contact_us"); ?>">Contact Us</a>
     </li>
   </ul>
   <div id="search_box">

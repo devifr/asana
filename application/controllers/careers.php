@@ -22,7 +22,7 @@ class Careers extends CI_Controller {
     $bhs = $this->lang->lang();
     $data_banner['banners'] = $this->banner->get_all($bhs);
     $data_content['careers'] = $this->career->get_all_limit('10');
-    $data_content['breadcumb'] = $this->breadcumb->with_home(); 
+    $data_content['breadcumb'] = $this->breadcumb->with_home();
     $this->load->view('home/head');
     $this->load->view('home/header');
     $this->load->view('home/menu');
@@ -64,7 +64,7 @@ class Careers extends CI_Controller {
     $this->load->view('home/header2');
     $this->load->view('career/job',$data_content);
     $this->load->view('home/footer');
-  } 
+  }
 
   public function apply_job($id_encrypt)
   {
@@ -75,12 +75,15 @@ class Careers extends CI_Controller {
   }
 
   public function sendEmail($email){
+    $this->load->model('config_website_model','config');
+    $row = $this->config->get_by_id(1)->row();
+    $email_lamaran = $row->email_lamaran;
     $config['protocol'] = 'mail';
     $config['wordwrap'] = FALSE;
-    $config['mailtype'] = 'html'; 
+    $config['mailtype'] = 'html';
     $this->email->initialize($config);
     $this->email->from($email['email']);
-    $this->email->to('dfedogawa3@gmail.com');
+    $this->email->to($email_lamaran);
     //$this->email->cc("christian.latif@tri-karsa.com");
     //$this->email->bcc('them@their-example.com');
 
@@ -94,7 +97,7 @@ class Careers extends CI_Controller {
     }else{
       echo "<script>alert('".$this->email->print_debugger()."');</script>";
     }
-  }  
+  }
 
   public function save_data($id_encrypt){
       // First, delete old captchas
@@ -176,14 +179,14 @@ class Careers extends CI_Controller {
           $msg = "Career Failed to Save";
           // redirect('careers/apply_job/'.$id_encrypt);
         }
-      }  
-    } 
+      }
+    }
       echo json_encode(array('status' => $status, 'msg' => $msg));
- 
+
 }
 
 
-  
+
 }
 
 /* End of file career.php */

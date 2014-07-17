@@ -87,6 +87,7 @@ class Config_website extends CI_Controller {
       $banner = $this->input->post('banner');
       $banner2 = $this->input->post('banner2');
       $email = $this->input->post('email');
+      $email_lamaran = $this->input->post('email_lamaran');
       $footer = $this->input->post('footer');
       //upload gambar
         $config['upload_path'] = './asset/images/web/';
@@ -125,7 +126,7 @@ class Config_website extends CI_Controller {
         }
 
       $data = array('website_name' =>$web_name,'meta_header' =>$meta_head,'meta_description' =>$meta_desc,'icon_name' =>$icon,
-        'logo_name' =>$logo, 'email_contact' =>$email,'footer' =>$footer);
+        'logo_name' =>$logo, 'email_contact' =>$email, 'email_lamaran' =>$email_lamaran,'footer' =>$footer);
       $update = $this->con_web->update($data);
       if($update==TRUE){
           sukses('Data has Saved');
