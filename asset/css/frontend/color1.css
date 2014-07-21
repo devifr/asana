@@ -68,7 +68,7 @@ p.contact-item i, .envor-side-navi ul li:hover i, .envor-pricing-2 .envor-pricin
 .envor-mobile-breadscrubs, .envor-skill-2 span.color, .envor-team-1 header, .envor-category-widget ul li p span.hovered, .envor-pricing-2 .envor-pricing-2-item .plan p,
 .envor-pricing-2 .envor-pricing-2-item .plan .arrow, .riva-countdown .riva-countdown-item .label, .envor-qa .q .lbl, .envor-qa .q .arrow, .envor-pagination .page-numbers:hover,
 .envor-single-estate .envor-propert-details p.agent-cosial a, .envor-single-product p.qty i.fa:hover, .envor-section-cart p.incart span, .envor-section-cart .shoppin-cart-table tbody td p.qty i.fa:hover,
-.envor-post header h3 .fa, .envor-post-author {
+.envor-post header h3 .fa, .envor-post-author, .envor-header-1 .envor-top-bar ul.social-btns li a.active {
 	background-color: #9AD03E;
 }
 .clicked, .envor-feature-2-color header i {
@@ -143,7 +143,7 @@ select:focus, textarea:focus,
    color: #ccc;
 }
 
-:-ms-input-placeholder {  
+:-ms-input-placeholder {
    color: #ccc;
 }
 

@@ -49,6 +49,13 @@
               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
               <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              <?php if($this->lang->lang()=='id'){ ?>
+                <li><?php echo anchor($this->lang->switch_uri('en'),' En'); ?></li>
+                <li><a href="#" class="active">Ind</a></li>
+              <?php }else{ ?>
+                <li><a href="#" class="active">En</a></li>
+                <li><?php echo anchor($this->lang->switch_uri('id'),' Ind'); ?></li>
+              <?php } ?>
             </ul>
           </div>
         </div>
