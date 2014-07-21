@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h2>List <strong>Clients</strong></h2>
+        <h2><?php echo lang('list-client'); ?></h2>
         <div class="envor-relative" id="latest-projects">
 
           <?php foreach ($clients as $key => $client) { ?>

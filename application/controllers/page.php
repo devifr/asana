@@ -11,6 +11,7 @@ class Page extends CI_Controller {
     $this->load->model('config_website_model','config_website');
     $this->load->helper('language');
     $this->load->helper('url');
+    $this->lang->load('home');
     // $this->output->enable_profiler(TRUE);
   }
 

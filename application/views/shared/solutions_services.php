@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h2><strong>Solutions & Services</strong></h2>
+        <h2><strong><?php echo lang('solution-service-title'); ?></strong></h2>
         <div class="envor-wrapper" id="clients-testimonials">
           <?php foreach ($rows->result() as $key => $row) { ?>
             <article class="envor-testimonials-1">

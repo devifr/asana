@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h2>our <strong>partners</strong></h2>
+          <h2><?php echo lang('our-partners-title'); ?></h2>
           <div class="envor-relative" id="our-partners">
             <?php foreach ($partners->result() as $key => $partner) { ?>
               <div class="envor-partner-logo">

@@ -5,14 +5,14 @@
         <h3><?php echo $content->judul_content; ?></h3>
         <p><?php echo str_replace('src="../../../', 'src="../../../../', $content->description); ?></p>
         <p>&nbsp;</p>
-        <h3><strong>contact</strong> info</h3>
+        <h3><?php echo lang('contact-info'); ?></h3>
         <p class="contact-item"><i class="fa fa-map-marker"></i> <?php echo $config->address; ?></p>
         <p class="contact-item"><i class="fa fa-phone"></i> <?php echo $config->phone; ?></p>
         <p class="contact-item"><i class="fa fa-envelope"></i> <a href=""><?php echo $config->email_contact; ?></a></p>
       </div>
       <?php $bhs = $this->lang->lang(); ?>
       <div class="col-lg-6 col-md-6">
-        <h3>drop us a  <strong>line</strong></h3>
+        <h3><?php echo lang('contact-title'); ?></h3>
         <form action="<?php echo base_url("$bhs/contact_us/save_data"); ?>" method="post" class="envor-f1">
           <p><label for="name">Your name:*</label><input type="text" id="drop-name" name="name"></p>
           <p><label for="email">Your email:*</label><input type="email" id="drop-email" name="email"></p>

@@ -5,33 +5,33 @@
     <p></p>
   </div>
   <i class="glyphicon glyphicon-align-justify" id="envor-mobile-menu-btn"></i>
-
+  <?php $bhs = $this->lang->lang(); ?>
   <!-- Mobile Menu -->
   <div class="envor-mobile-menu" id="envor-mobile-menu">
     <h3>menu</h3>
     <nav>
       <ul>
         <li>
-          <a href="<?php echo base_url(); ?>">Home</a>
+          <a href="<?php echo base_url("$bhs"); ?>">Home</a>
         </li>
         <li>
-          <a href="<?php echo base_url('page/about_us'); ?>">About Us</a>
+          <a href="<?php echo base_url("$bhs/page/about_us"); ?>">About Us</a>
         </li>
         <li>
           <a href="#">Solutions & Services</a>
           <ul>
-            <li><a href="<?php echo base_url('page/solution'); ?>">Solutions</a></li>
-            <li><a href="<?php echo base_url('page/service'); ?>">Services</a></li>
+            <li><a href="<?php echo base_url("$bhs/page/solution"); ?>">Solutions</a></li>
+            <li><a href="<?php echo base_url("$bhs/page/service"); ?>">Services</a></li>
           </ul>
         </li>
         <li>
-          <a href="<?php echo base_url('client_partner'); ?>">Partners & Clients</a>
+          <a href="<?php echo base_url("$bhs/client_partner"); ?>">Partners & Clients</a>
         </li>
         <li>
-          <a href="<?php echo base_url('careers'); ?>">Career</a>
+          <a href="<?php echo base_url("$bhs/careers"); ?>">Career</a>
         </li>
         <li>
-          <a href="<?php echo base_url('contact_us'); ?>">Contacts Us</a>
+          <a href="<?php echo base_url("$bhs/contact_us"); ?>">Contacts Us</a>
         </li>
       </ul>
     </nav>
@@ -71,26 +71,26 @@
               <nav>
                 <ul>
                   <li>
-                    <a href="<?php echo base_url(); ?>">Home</a>
+                    <a href="<?php echo base_url("$bhs"); ?>">Home</a>
                   </li>
                   <li>
-                    <a href="<?php echo base_url('page/about_us'); ?>">About Us</a>
+                    <a href="<?php echo base_url("$bhs/page/about_us"); ?>">About Us</a>
                   </li>
                   <li>
                     <a href="#">Solutions & Services</a>
                     <ul>
-                      <li><a href="<?php echo base_url('page/solution'); ?>">Solutions</a></li>
-                      <li><a href="<?php echo base_url('page/service'); ?>">Services</a></li>
+                      <li><a href="<?php echo base_url("$bhs/page/solution"); ?>">Solutions</a></li>
+                      <li><a href="<?php echo base_url("$bhs/page/service"); ?>">Services</a></li>
                     </ul>
                   </li>
                   <li>
-                    <a href="<?php echo base_url('client_partner'); ?>">Partners & Clients</a>
+                    <a href="<?php echo base_url("$bhs/client_partner"); ?>">Partners & Clients</a>
                   </li>
                   <li>
-                    <a href="<?php echo base_url('careers'); ?>">Career</a>
+                    <a href="<?php echo base_url("$bhs/careers"); ?>">Career</a>
                   </li>
                   <li>
-                    <a href="<?php echo base_url('contact_us'); ?>">Contacts Us</a>
+                    <a href="<?php echo base_url("$bhs/contact_us"); ?>">Contacts Us</a>
                   </li>
                 </ul>
               </nav>

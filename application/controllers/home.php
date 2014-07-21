@@ -7,7 +7,8 @@ class Home extends CI_Controller {
 		parent::__construct();
 		$this->load->model('banner_slideshow_model','banner');
 		$this->load->model('partner_model','partner');
-		$this->load->model('content_model','content');
+    $this->load->model('content_model','content');
+		$this->load->model('section_model','section');
     $this->load->model('config_website_model','config_website');
 		$this->load->model('testimonial_model','testimonial');
 		$this->load->library('breadcumb','breadcumb');
@@ -23,7 +24,10 @@ class Home extends CI_Controller {
     $data_banner['banners'] = $this->banner->get_all($bhs);
 		$data_partner['partners'] = $this->partner->get_all($bhs);
     $data_sol_ser['rows'] = $this->content->get_all_by_kategori('1',$bhs);
-    $data_section['rows'] = $this->content->get_all_by_kategori('2',$bhs);
+    $data_section['section1'] = $this->section->get_by_alias('section1',$bhs)->row();
+    $data_section['section2'] = $this->section->get_by_alias('section2',$bhs)->row();
+    $data_section['section3'] = $this->section->get_by_alias('section3',$bhs)->row();
+    $data_section['about_us'] = $this->content->get_by_alias('about-us',$bhs)->row();
     $data['about_us'] = $this->content->get_by_alias('about-us',$bhs)->row();
     $data['vision'] = $this->content->get_by_alias('vision',$bhs)->row();
 		$data['mission'] = $this->content->get_by_alias('mision',$bhs)->row();

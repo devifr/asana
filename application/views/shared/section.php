@@ -6,9 +6,9 @@
           <div class="envor-feature-inner">
             <header>
               <i class="fa fa-globe back-black"></i>
-              lovely
+              <?php echo $section1->title; ?>
             </header>
-            <p>Donec cursus ligula ante, non faucibus felis lobortis sed.</p>
+            <p><?php echo $section1->description; ?></p>
           </div>
         </article>
       </div>
@@ -17,9 +17,9 @@
           <div class="envor-feature-inner">
             <header>
               <i class="fa fa-cog back-black"></i>
-              exquisite
+              <?php echo $section2->title; ?>
             </header>
-            <p>Vivamus sollicitudin nisi rhoncus bibendum suscipit.</p>
+            <p><?php echo $section2->description; ?></p>
           </div>
         </article>
       </div>
@@ -28,16 +28,16 @@
           <div class="envor-feature-inner">
             <header>
               <i class="fa fa-trophy back-black"></i>
-              glorious
+              <?php echo $section3->title; ?>
             </header>
-            <p>Pellentesque lacinia, lectus ac varius adipiscing.</p>
+            <p><?php echo $section3->description; ?></p>
           </div>
         </article>
       </div>
     </div>
   </div>
 </section>
-
+<?php $bhs = $this->lang->lang(); ?>
 <section class="envor-section envor-section-st1 envor-section-align-center">
   <div class="container">
     <div class="row">
@@ -47,10 +47,10 @@
           <br>
           <span class='font16'>Smart IT Solutions</span>
         </h2>
-        <p>PT Arsana Jaya Utama was founded in June 2014. As a company specializing in Information Technology, our professional team will give the best service, high quality product to our customer and IT solutions crafted for each customer. We build strategic alliances with mutual partners both local and international ...</p>
+        <p><?php echo $about_us->description; ?></p>
         <p>
-          <a href="" class="envor-btn envor-btn-primary envor-btn-normal">
-            <i class="glyphicon glyphicon-question-sign"></i> View More
+          <a href="<?php echo base_url("$bhs/page/about_us"); ?>" class="envor-btn envor-btn-primary envor-btn-normal">
+            <i class="glyphicon glyphicon-question-sign"></i> <?php echo lang('view-more'); ?>
           </a>
         </p>
       </div>

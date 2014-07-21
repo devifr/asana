@@ -13,7 +13,7 @@
 
         <div class="col-lg-4 col-md-4">
           <div class="envor-widget">
-            <h3><strong>Vision & Mision</strong></h3>
+            <h3><strong><?php echo lang('vision-mision'); ?></strong></h3>
             <div class="envor-widget-inner">
               <div class="envor-wrapper" id="footer-news">
                 <article class="envor-post-preview">
@@ -48,17 +48,17 @@
 
         <div class="col-lg-4 col-md-4">
           <div class="envor-widget envor-contacts-widget">
-            <h3><strong>Contacts Us</strong></h3>
+            <h3><strong><?php echo lang('contact-info');?></strong></h3>
             <div class="envor-widget-inner">
               <div class="margin-bottom20">
-                <b>Alamat</b>
+                <b><?php echo lang('address'); ?></b>
                 <br>
                 <?php echo $config->address; ?>
               </div>
               <div class="margin-bottom20">
-                Phone: <?php echo $config->phone; ?>
+                <?php echo lang('phone'); ?>: <?php echo $config->phone; ?>
                 <br>
-                fax : <?php echo $config->fax; ?>
+                <?php echo lang('fax'); ?> : <?php echo $config->fax; ?>
               </div>
               <div class="margin-bottom20">
                 <a href="#">Email: <?php echo $config->email_contact; ?></a>
