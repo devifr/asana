@@ -103,5 +103,5 @@
   </header>
 <div class="envor-content">
 <?php
-  // echo $this->session->flashdata('msg');
+  echo $this->session->flashdata('msg');
 ?>

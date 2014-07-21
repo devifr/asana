@@ -27,7 +27,7 @@
           </div>
           <div class="ca-btn">
             <!-- <a href="<?php //echo base_url("$lang/careers/job/$id_encrypt"); ?>" target='_blank' class="envor-btn envor-btn-primary envor-btn-small">apply now!</a> -->
-            <a href="#" class="envor-btn envor-btn-primary envor-btn-small"><i class="fa fa-plus"></i>apply now!</a>
+            <a href="#modal-job" class="envor-btn envor-btn-primary envor-btn-small btn-apply" data-id="<?php echo $id_encrypt; ?>" data-toggle="modal"><i class="fa fa-plus"></i>apply now!</a>
             <a href="#" class="envor-btn envor-btn-secondary envor-btn-small show-details"><i class="fa fa-plus"></i> details</a>
           </div>
         </div>
@@ -39,3 +39,6 @@
     </div>
   </div>
 </section>
+<div id="modal-job" class="modal">
+
+</div>

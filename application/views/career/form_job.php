@@ -1,79 +1,63 @@
-<script type="text/javascript">
-$("#apply_job").submit(function(event) {
+<?php $row = $rows->row(); ?>
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  <h3><?php echo "$row->position ($row->title)"; ?></h3>
+</div>
+<div class="modal-body">
+  <div id="isi">
+    <div align="center">
+      <div id="result"></div>
+    </div>
+    <form id="apply_job" name="apply_job" action="<?php echo base_url($this->lang->lang().'/careers/save_data/'.$id_encrypt);?>" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label class="control-label" for="name">Name</label>
+        <input type="text" name="name_lamaran" id="name" class="form-control">
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="email">Email</label>
+        <input type="email" name="email" id="email" class="form-control">
+      </div>
+      <div>
+        <label class="form-group">No Phone</label>
+        <input type="text" name="no_phone" id="no_phone" class="form-control">
+      </div>
+      <div class="form-group">
+        <label class="control-label">Address</label>
+        <textarea name="address" id="address" class="form-control"></textarea>
+      </div>
+      <div class="form-group">
+        <label class="control-label">Education</label>
+        <input type="text" name="education" id="education" class="form-control">
+      </div>
+      <div class="form-group">
+        <label class="control-label">Attachment *zip, doc, docx</label>
+        <input type="file" name="attach" id="attach" class="form-control">
+      </div>
+      <div class="form-group">
+        <label class="control-label">Cover Letter</label>
+        <textarea name="cover" id="cover" class="form-control">
+              Dear Sir/Madam,
 
-  /* stop form from submitting normally */
-  event.preventDefault();
+              I wish to apply for the position above, as advertised on Jobstreet.com on 13 March 2013.
 
-  /*clear result div*/
-   $("#result").html('');
+              [Please add your message here.]
 
-  /* get some values from elements on the page: */
-   var values = $(this).serialize();
+              Thank you.
 
-  /* Send the data using post and put the results in a div */
-    $.ajax({
-      url: "<?php echo base_url($this->lang->lang().'/careers/save_data/'.$id_encrypt);?>",
-      type: "post",
-      data: values,
-      success: function(){
-          alert("success");
-           $("#result").html('<div id=success>Your Data Had Been Send</div>');
-      },
-      error:function(){
-          alert("failure");
-          $("#result").html('<div id=gagal>Your Data Failed to Be Send</div>');
-      }   
-    }); 
-});
-</script>
-<div id="isi">
-<div align="center">
-  <div id="result"></div>
-                  </div>
-              <form id="apply_job" name="apply_job" method="post" enctype="multipart/form-data">
-                    <table width="100%" id="tabel_form" name="tabel_form">
-                    <tr>
-                      <td width="13%">Name</td>
-                      <td width="87%"><input type="text" name="name_lamaran" id="name" size="35"></td>
-                    </tr>
-                    <tr>
-                      <td>Email</td>
-                      <td><input type="text" name="email" id="email" size="55"></td>
-                    </tr>
-                    <tr>
-                      <td>No Phone</td>
-                      <td><input type="text" name="no_phone" id="no_phone" size="25"></td>
-                    </tr>
-                    <tr>
-                    <td>Address</td>
-                    <td><textarea name="address" id="address" rows="5" cols="30"></textarea></td>
-                    </tr>
-                    <tr>
-                    <td>Education</td>
-                    <td><input type="text" name="education" id="education" size="35"></td>
-                    </tr>
-                    <tr>
-                      <td>Attachment</td>
-                    <td><input type="file" name="attach" id="attach"> *zip, doc, docx</td>
-                  </tr>
-                  <tr valign="top">
-                      <td>Cover Letter</td>
-                    <td><textarea name="cover" id="cover" rows="25" cols="50">
-Dear Sir/Madam,
-
-I wish to apply for the position above, as advertised on Jobstreet.com on 13 March 2013.
-
-[Please add your message here.]
-
-Thank you.
-
-Sincerely
-[Your Name]</textarea></td>
-                  </tr>
-                  <tr>
-                    <td colspan='2'><input type="submit" name="simpan" id="button" value="Apply" /></td>
-                  </tr>
-                    </table>
-              </form>
-                <div class="cleaner"></div>
-            </div>
+              Sincerely
+              [Your Name]
+          </textarea>
+      </div>
+      <div class="form-group">
+        <label class="control-label"><?php echo $captcha; ?></label>
+        <input type="text" name="captcha" value="" class="form-control" />
+      </div>
+      <div class="form-group">
+        <div class="pull-right">
+          <input type="submit" class="btn btn-primary" name="simpan" id="button" value="Apply" />
+          <input type="button" data-dismiss="modal" aria-hidden="true" class="btn btn-danger" value="Close" />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

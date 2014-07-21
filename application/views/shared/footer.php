@@ -123,6 +123,20 @@
           selector : 'envor-testimonials-1',
           mobile_visible : 1
         });
+        // get job
+        $('a.btn-apply').click(function(){
+          id_encrypt = $(this).data('id');
+          $.ajax({
+            url: "<?php echo base_url($this->lang->lang().'/careers/job'); ?>/"+id_encrypt,
+            type: "get",
+            data: '',
+            success: function(result){
+                $("#modal-job").html(result);
+                $("#modal-job").modal('show');
+            }
+          });
+          return false;
+        })
       });
   </script>
   <script src="<?php echo js_url('frontend/envor.js'); ?>"></script>

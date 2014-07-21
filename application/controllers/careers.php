@@ -68,10 +68,10 @@ class Careers extends CI_Controller {
     $data['vision'] = $this->content->get_by_alias('vision',$bhs)->row();
     $data['mission'] = $this->content->get_by_alias('mision',$bhs)->row();
     $data['config'] = $this->config_website->get_by_id('1')->row();
-    $this->load->view('shared/head');
-    $this->load->view('shared/top_bar', $data);
-    $this->load->view('career/job',$data_content);
-    $this->load->view('shared/footer', $data);
+    // $this->load->view('shared/head');
+    // $this->load->view('shared/top_bar', $data);
+    $this->load->view('career/form_job',$data_content);
+    // $this->load->view('shared/footer', $data);
   }
 
   public function apply_job($id_encrypt)
@@ -82,9 +82,9 @@ class Careers extends CI_Controller {
     $this->load->view('career/form_job',$data_content);
   }
 
-  public function sendEmail($email){
-    $this->load->model('config_website_model','config');
-    $row = $this->config->get_by_id(1)->row();
+  public function sendEmail($email,$id_career){
+    $row = $this->config_website->get_by_id(1)->row();
+    $job = $this->career->get_by_id($id_career)->row();
     $email_lamaran = $row->email_lamaran;
     $config['protocol'] = 'mail';
     $config['wordwrap'] = FALSE;
@@ -92,15 +92,16 @@ class Careers extends CI_Controller {
     $this->email->initialize($config);
     $this->email->from($email['email']);
     $this->email->to($email_lamaran);
-    //$this->email->cc("christian.latif@tri-karsa.com");
-    //$this->email->bcc('them@their-example.com');
-
+    $data_email['email'] = $email;
+    $data_email['job'] = $job;
     $this->email->subject('Application Form | '.$email['name']);
-    $msg = $this->load->view('career/email_job',$email,TRUE);
+    // $msg = $this->load->view('career/email_job',$data_email);
+    $msg = 'test';
     $this->email->message($msg);
 
     $kirim = $this->email->send();
     if($kirim==TRUE){
+      echo "<script>alert('".$this->email->print_debugger()."');</script>";
       return $kirim;
     }else{
       echo "<script>alert('".$this->email->print_debugger()."');</script>";
@@ -131,10 +132,10 @@ class Careers extends CI_Controller {
 
       if ($this->form_validation->run() == FALSE)
       {
-        // gagal(validation_errors());
-        $status = "error";
-        $msg = "Your Input Not Completed";
-        // redirect('careers/apply_job/'.$id_encrypt);
+        gagal(validation_errors());
+        // $status = "error";
+        // $msg = "Your Input Not Completed";
+        redirect('careers/apply_job/'.$id_encrypt);
       }
       else
       {
@@ -157,10 +158,10 @@ class Careers extends CI_Controller {
         $attach = $file1['file_name'];
         if (!$upload1)
         {
-           // gagal($this->upload->display_errors());
-           $status = "error";
-           $msg = "Something Wrong On File You Download";
-           // redirect('careers/apply_job/'.$id_encrypt);
+           gagal($this->upload->display_errors());
+           // $status = "error";
+           // $msg = "Something Wrong On File You Download";
+           redirect('careers');
         }
         //set email
 
@@ -176,20 +177,17 @@ class Careers extends CI_Controller {
         'address_lamaran' => $address, 'education_lamaran'=>$education, 'cover_lamaran' => $cover, 'date_apply' => $date_apply,'lampiran_lamaran' => $attach);
         $simpan = $this->lamaran->insert_data($data);
         if($simpan==TRUE){
-          // sukses('Career has Saved');
-          // $this->sendEmail($email);
-          $status = "success";
-          $msg = "Career has Saved";
-          // redirect('careers/');
+          sukses('Career has Saved');
+          $this->sendEmail($email,$id_career);
+          redirect('careers');
         }else{
-          // gagal('Career Failed to Save');
-          $status = "error";
-          $msg = "Career Failed to Save";
-          // redirect('careers/apply_job/'.$id_encrypt);
+          gagal('Career Failed to Save');
+          redirect('careers');
         }
       }
     }
-      echo json_encode(array('status' => $status, 'msg' => $msg));
+
+      // echo json_encode(array('status' => $status, 'msg' => $msg));
 
 }
 

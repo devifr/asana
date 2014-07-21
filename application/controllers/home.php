@@ -23,6 +23,7 @@ class Home extends CI_Controller {
     $data_banner['banners'] = $this->banner->get_all($bhs);
 		$data_partner['partners'] = $this->partner->get_all($bhs);
     $data_sol_ser['rows'] = $this->content->get_all_by_kategori('1',$bhs);
+    $data_section['rows'] = $this->content->get_all_by_kategori('2',$bhs);
     $data['about_us'] = $this->content->get_by_alias('about-us',$bhs)->row();
     $data['vision'] = $this->content->get_by_alias('vision',$bhs)->row();
 		$data['mission'] = $this->content->get_by_alias('mision',$bhs)->row();
@@ -33,7 +34,7 @@ class Home extends CI_Controller {
     $this->load->view('shared/head');
 		$this->load->view('shared/top_bar', $data);
 		$this->load->view('shared/slider', $data_banner);
-		$this->load->view('shared/section');
+		$this->load->view('shared/section', $data_section);
 		$this->load->view('shared/solutions_services', $data_sol_ser);
     $this->load->view('shared/section_partner', $data_partner);
 		$this->load->view('shared/footer',$data);
