@@ -6,7 +6,9 @@ class Page extends CI_Controller {
   {
     parent::__construct();
     $this->load->model('content_model','content');
-    $this->load->model('banner_slideshow_model','banner');
+    $this->load->model('partner_model','partner');
+    $this->load->model('client_model','client');
+    $this->load->model('config_website_model','config_website');
     $this->load->helper('language');
     $this->load->helper('url');
     // $this->output->enable_profiler(TRUE);
@@ -15,40 +17,52 @@ class Page extends CI_Controller {
   public function about_us()
   {
     $bhs = $this->lang->lang();
-    $data_banner['banners'] = $this->banner->get_all($bhs);
     $data_content['rows'] = $this->content->get_by_alias('about-us',$bhs);
-    $this->load->view('home/head');
-    $this->load->view('home/header');
-    $this->load->view('home/menu');
-    $this->load->view('home/banner',$data_banner);
+    $data['about_us'] = $this->content->get_by_alias('about-us',$bhs)->row();
+    $data['vision'] = $this->content->get_by_alias('vision',$bhs)->row();
+    $data['mission'] = $this->content->get_by_alias('mision',$bhs)->row();
+    $data['config'] = $this->config_website->get_by_id('1', $bhs)->row();
+    $data_partner['partners'] = $this->partner->get_all($bhs);
+    $data_sol_ser['rows'] = $this->content->get_all_by_kategori('1',$bhs);
+    $this->load->view('shared/head');
+    $this->load->view('shared/top_bar', $data);
     $this->load->view('page/show',$data_content);
-    $this->load->view('home/footer');
+    $this->load->view('shared/solutions_services',$data_sol_ser);
+    $this->load->view('shared/footer', $data);
   }
 
   public function solution()
   {
     $bhs = $this->lang->lang();
-    $data_banner['banners'] = $this->banner->get_all($bhs);
     $data_content['rows'] = $this->content->get_by_alias('solution',$bhs);
-    $this->load->view('home/head');
-    $this->load->view('home/header');
-    $this->load->view('home/menu');
-    $this->load->view('home/banner',$data_banner);
+    $data_client['clients'] = $this->client->get_all_active()->result();
+    $data['about_us'] = $this->content->get_by_alias('about-us',$bhs)->row();
+    $data['vision'] = $this->content->get_by_alias('vision',$bhs)->row();
+    $data['mission'] = $this->content->get_by_alias('mision',$bhs)->row();
+    $data['config'] = $this->config_website->get_by_id('1')->row();
+    $data_partner['partners'] = $this->partner->get_all($bhs);
+    $this->load->view('shared/head');
+    $this->load->view('shared/top_bar', $data);
     $this->load->view('page/show',$data_content);
-    $this->load->view('home/footer');
+    $this->load->view('shared/clients', $data_client);
+    $this->load->view('shared/footer', $data);
   }
 
   public function service()
   {
     $bhs = $this->lang->lang();
-    $data_banner['banners'] = $this->banner->get_all($bhs);
     $data_content['rows'] = $this->content->get_by_alias('service',$bhs);
-    $this->load->view('home/head');
-    $this->load->view('home/header');
-    $this->load->view('home/menu');
-    $this->load->view('home/banner',$data_banner);
+    $data_client['clients'] = $this->client->get_all_active()->result();
+    $data['about_us'] = $this->content->get_by_alias('about-us',$bhs)->row();
+    $data['vision'] = $this->content->get_by_alias('vision',$bhs)->row();
+    $data['mission'] = $this->content->get_by_alias('mision',$bhs)->row();
+    $data['config'] = $this->config_website->get_by_id('1')->row();
+    $data_partner['partners'] = $this->partner->get_all($bhs);
+    $this->load->view('shared/head');
+    $this->load->view('shared/top_bar', $data);
     $this->load->view('page/show',$data_content);
-    $this->load->view('home/footer');
+    $this->load->view('shared/clients', $data_client);
+    $this->load->view('shared/footer', $data);
   }
 
 }

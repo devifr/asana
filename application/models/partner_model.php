@@ -13,6 +13,13 @@ class Partner_model extends CI_Model {
         return $query;
     }
 
+    function get_all_active()
+    {
+        $this->db->where('active_partner','1');
+        $query = $this->db->get('partner');
+        return $query;
+    }
+
     function get_all_limit($limit)
     {
         $this->db->where('active_partner','1');

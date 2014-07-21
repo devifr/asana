@@ -23,6 +23,7 @@
       <tr><td><b>Title Client</b></td><td><input type="text" name="judul" value="<?php echo set_value('judul'); ?>" /></td></tr>
       <tr><td><b>Image Client</b></td><td><input type="file" name="image" value="<?php echo set_value('image'); ?>" />
         </td></tr>
+      <tr><td><b>Scope</b></td><td><input type="text" name="scope" value="<?php echo set_value('scope'); ?>" /></td></tr>
       <tr><td><b>Link Client</b></td><td><input type="text" name="link" value="<?php echo set_value('link'); ?>" /></td></tr>
       <tr><td><b>Active</b></td><td>
         <select name='active'>

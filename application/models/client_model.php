@@ -13,6 +13,13 @@ class Client_model extends CI_Model {
         return $query;
     }
 
+    function get_all_active()
+    {
+        $this->db->where('active_client','1');
+        $query = $this->db->get('client');
+        return $query;
+    }
+
     function get_all_limit($limit)
     {
         $this->db->where('active_client','1');

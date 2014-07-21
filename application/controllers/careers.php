@@ -6,8 +6,9 @@ class Careers extends CI_Controller {
   {
     parent::__construct();
     $this->load->model('banner_slideshow_model','banner');
-    $this->load->model('menu_model','menu');
+    $this->load->model('content_model','content');
     $this->load->model('career_model','career');
+    $this->load->model('config_website_model','config_website');
     $this->load->helper('language');
     $this->load->library('breadcumb','breadcumb');
     $this->load->helper('url');
@@ -22,13 +23,16 @@ class Careers extends CI_Controller {
     $bhs = $this->lang->lang();
     $data_banner['banners'] = $this->banner->get_all($bhs);
     $data_content['careers'] = $this->career->get_all_limit('10');
-    $data_content['breadcumb'] = $this->breadcumb->with_home();
-    $this->load->view('home/head');
-    $this->load->view('home/header');
-    $this->load->view('home/menu');
-    $this->load->view('home/banner',$data_banner);
+    $data_content['content'] = $this->content->get_by_alias('career-page', $bhs)->row();
+    $data['about_us'] = $this->content->get_by_alias('about-us',$bhs)->row();
+    $data['vision'] = $this->content->get_by_alias('vision',$bhs)->row();
+    $data['mission'] = $this->content->get_by_alias('mision',$bhs)->row();
+    $data['config'] = $this->config_website->get_by_id('1')->row();
+    $this->load->view('shared/head');
+    $this->load->view('shared/top_bar', $data);
+    $this->load->view('shared/breadcrumb_career');
     $this->load->view('career/careers',$data_content);
-    $this->load->view('home/footer');
+    $this->load->view('shared/footer', $data);
   }
 
   public function job($id_encrypt)
@@ -60,10 +64,14 @@ class Careers extends CI_Controller {
 
     $data_content['rows'] = $this->career->get_by_id($id);
     $data_content['id_encrypt'] = $id_encrypt;
-    $this->load->view('home/head');
-    $this->load->view('home/header2');
+    $data['about_us'] = $this->content->get_by_alias('about-us',$bhs)->row();
+    $data['vision'] = $this->content->get_by_alias('vision',$bhs)->row();
+    $data['mission'] = $this->content->get_by_alias('mision',$bhs)->row();
+    $data['config'] = $this->config_website->get_by_id('1')->row();
+    $this->load->view('shared/head');
+    $this->load->view('shared/top_bar', $data);
     $this->load->view('career/job',$data_content);
-    $this->load->view('home/footer');
+    $this->load->view('shared/footer', $data);
   }
 
   public function apply_job($id_encrypt)

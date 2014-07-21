@@ -106,7 +106,7 @@ $('.fancybox').fancybox();
                   <th width="4%"><h3>ID</h3></th>
                   <th width="16%"><h3>Title</h3></th>
                   <th width="5%"><h3>Status</h3></th>
-                  <th width="10%"><h3>Created At</h3></th>
+                  <th width="10%"><h3>Scope</h3></th>
                   <th width="8%"><h3>View Image</h3></th>
                   <th width="8%"><h3 align="center">Action</h3></th>
                 </tr>
@@ -114,25 +114,25 @@ $('.fancybox').fancybox();
             <tbody>
               <?php
               if($result->num_rows()>0){
-               foreach ($result->result() as $key => $gal) {
-                $id_encrypt = $this->encrypt->encode($gal->id_client);
+               foreach ($result->result() as $key => $client) {
+                $id_encrypt = $this->encrypt->encode($client->id_client);
               ?>
                 <tr>
                     <td><input type="checkbox" name="checkid[]" class='checkid' value="<?php echo $id_encrypt; ?>" />
                     </td>
                     <td><?php echo $key+1; ?></td>
-                    <td><?php echo $gal->judul_client; ?></td>
+                    <td><?php echo $client->judul_client; ?></td>
                     <td>
                       <div align="center">
-                      <?php if($gal->active_client==0){ ?>
+                      <?php if($client->active_client==0){ ?>
                         <a href="<?php echo base_url().'admin/client/publish/yes/'.$id_encrypt; ?>" onclick="return confirm('Do You Want To Active This Images?');"><img src="<?php echo base_url('asset/images/admin/img/delete.png');?>" title="Unpublish" width="16" height="16"></a>
                       <?php }else{ ?>
                         <a href="<?php echo base_url().'admin/client/publish/no/'.$id_encrypt ?>" onclick="return confirm('Do You Want To Nonactive This Images');"><img src="<?php echo base_url('asset/images/admin/img/oke.png');?>" title="Publish"></a>
                       <?php } ?>
                       </div>
                     </td>
-                    <td><div align="center"><span id="orange"><?php echo $gal->created_at; ?></span> </div></td>
-                    <td><div align="center"><span id="orange"><a class="fancybox" href="<?php echo base_url('client/'.$gal->image); ?>" data-fancybox-group="client" title="<?php echo $gal->judul_client ?>"><img src="<?php echo base_url('client/'.$gal->image); ?>" class="thumbnail" id="view" idimage="<?php echo $id_encrypt; ?>"/></a></div></td>
+                    <td><div align="center"><span id="orange"><?php echo $client->scope; ?></span> </div></td>
+                    <td><div align="center"><span id="orange"><a class="fancybox" href="<?php echo base_url('client/'.$client->image); ?>" data-fancybox-group="client" title="<?php echo $client->judul_client ?>"><img src="<?php echo base_url('client/'.$client->image); ?>" class="thumbnail" id="view" idimage="<?php echo $id_encrypt; ?>"/></a></div></td>
                     <td><div align="center"><a href="<?php echo base_url().'admin/client/delete_data/'.$id_encrypt; ?>" onclick="return confirm('Do You Want Delete This Row?')">
                       <img src="<?php echo base_url('asset/images/admin/img/remove.png');?>" width="16" height="16" title="Delete"></a>
                         <a href="<?php echo base_url().'admin/client/edit/'.$id_encrypt; ?>"><img src="<?php echo base_url('asset/images/admin/img/folderup_16.png');?>" width="16" height="16" title="Edit Data"></a>

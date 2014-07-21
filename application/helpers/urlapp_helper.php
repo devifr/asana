@@ -57,4 +57,22 @@ if ( ! function_exists('testi_url'))
   }
 }
 
+if ( ! function_exists('partner_url'))
+{
+  function partner_url($uri = '')
+  {
+    $CI =& get_instance();
+    return base_url()."partner/".$uri;
+  }
+}
+
+if ( ! function_exists('client_url'))
+{
+  function client_url($uri = '')
+  {
+    $CI =& get_instance();
+    return base_url()."client/".$uri;
+  }
+}
+
 ?>

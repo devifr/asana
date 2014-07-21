@@ -7,7 +7,8 @@ class Client_partner extends CI_Controller {
     parent::__construct();
     $this->load->model('client_model','client');
     $this->load->model('partner_model','partner');
-    $this->load->model('banner_slideshow_model','banner');
+    $this->load->model('content_model','content');
+    $this->load->model('config_website_model','config_website');
     $this->load->helper('language');
     $this->load->helper('url');
     // $this->output->enable_profiler(TRUE);
@@ -16,15 +17,19 @@ class Client_partner extends CI_Controller {
   public function index()
   {
     $bhs = $this->lang->lang();
-    $data_banner['banners'] = $this->banner->get_all($bhs);
-    $data['client'] = $this->client->get_all();
-    $data['partner'] = $this->partner->get_all();
-    $this->load->view('home/head');
-    $this->load->view('home/header');
-    $this->load->view('home/menu');
-    $this->load->view('home/banner',$data_banner);
-    $this->load->view('client_partner/index',$data);
-    $this->load->view('home/footer');
+    $data_partner['content'] = $this->content->get_by_alias('partner-client-page',$bhs)->row();
+    $data_partner['partners'] = $this->partner->get_all_active();
+    $data_client['clients'] = $this->client->get_all_active()->result();
+    $data['about_us'] = $this->content->get_by_alias('about-us',$bhs)->row();
+    $data['vision'] = $this->content->get_by_alias('vision',$bhs)->row();
+    $data['mission'] = $this->content->get_by_alias('mision',$bhs)->row();
+    $data['config'] = $this->config_website->get_by_id('1')->row();
+    $this->load->view('shared/head');
+    $this->load->view('shared/top_bar', $data);
+    $this->load->view('shared/breadcrumb_partners_clients');
+    $this->load->view('client_partner/index',$data_partner);
+    $this->load->view('shared/clients', $data_client);
+    $this->load->view('shared/footer', $data);
   }
 
 }

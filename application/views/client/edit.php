@@ -27,6 +27,7 @@
       <tr><td><b>Title Client</b></td><td><input type="text" name="judul" value="<?php echo $row->judul_client ?>" /></td></tr>
       <tr><td><b>Image Client</b></td><td><input type="file" name="image" /><input type="hidden" name="image2" value="<?php echo $row->image; ?>" />
         </td></tr>
+      <tr><td><b>Scope</b></td><td><input type="text" name="scope" value="<?php echo $row->scope; ?>" /></td></tr>
       <tr><td><b>Link Client</b></td><td><input type="text" name="link" value="<?php echo $row->link ?>" /></td></tr>
       <tr><td><b>Active</b></td><td>
         <select name='active'>

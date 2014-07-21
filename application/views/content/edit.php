@@ -43,13 +43,17 @@ $(document).ready(function(){
         <input type="text" id = "judul" name="judul" class="sedang" value="<?php echo $row->judul_content; ?>"></td></tr>
       <tr><td width="100px"><b>Alias URL</b></td><td>
         <input type="text" id = "alias" name="alias" class="sedang" value="<?php echo $row->alias_content; ?>"></td></tr>
-      <!-- <tr><td><b>Kategori</b></td><td>
+      <tr><td><b>For Solution Service</b></td><td>
        <select name='kategori'>
-          <?php foreach ($kategori as $key => $kate) {
-            echo "<option value='$kate->id_kategori' "; if($row->kategori_id == $kate->id_kategori) echo "selected=selected"; echo ">$kate->nama_kategori</option>";
-          } ?>
+          <option value='1'>Yes</option>
+          <option value='0'>No</option>
         </select>
-      </td></tr> -->
+<!--         <select name='kategori'>
+          <?php// foreach ($kategori as $key => $kate) {
+          //echo "<option value='$kate->id_kategori'>$kate->nama_kategori</option>";
+          } ?>
+        </select> -->
+      </td></tr>
       <!-- <tr><td><b>Subkategori</b></td><td>
         <select name='subkategori'>
           <?php foreach ($bahasa as $key => $bhs) {

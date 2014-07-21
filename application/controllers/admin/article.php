@@ -65,8 +65,8 @@ class Article extends CI_Controller {
   {
       $cekLogin = $this->simpleauth->cekBelumLogin();
       $this->form_validation->set_rules('alias', 'Alias URL', 'required|is_unique[content.alias_content]');
-      $this->form_validation->set_rules('judul', 'Judul Article', 'required');
-      $this->form_validation->set_rules('description', 'Description Article', 'required');
+      $this->form_validation->set_rules('judul', 'Judul Content', 'required');
+      $this->form_validation->set_rules('description', 'Description Content', 'required');
       $this->form_validation->set_rules('bahasa', 'Language', 'required');
       $this->form_validation->set_rules('publish_date', 'Date to Publish', 'required');
 
@@ -91,9 +91,9 @@ class Article extends CI_Controller {
         'publish_date' => $publish_date,'created_at' => $created_at,'add_other_content' => $add,'hits' => $hits,'active_content' => $active);
         $simpan = $this->content->insert_data($data);
         if($simpan==TRUE){
-          sukses('Article has Saved');
+          sukses('Content has Saved');
         }else{
-          gagal('Article Failed to Save');
+          gagal('Content Failed to Save');
         }
         redirect('admin/article/input/');
       }
@@ -104,8 +104,8 @@ class Article extends CI_Controller {
       $id = $this->encrypt->decode($id_encrypt);
       $cekLogin = $this->simpleauth->cekBelumLogin();
       $this->form_validation->set_rules('alias', 'Alias URL', 'required|is_unique_for_edit[content.alias_content]');
-      $this->form_validation->set_rules('judul', 'Judul Article', 'required');
-      $this->form_validation->set_rules('description', 'Description Article', 'required');
+      $this->form_validation->set_rules('judul', 'Judul Content', 'required');
+      $this->form_validation->set_rules('description', 'Description Content', 'required');
       $this->form_validation->set_rules('bahasa', 'Language', 'required');
       $this->form_validation->set_rules('publish_date', 'Date to Publish', 'required');
 
@@ -128,9 +128,9 @@ class Article extends CI_Controller {
         'publish_date' => $publish_date,'add_other_content' => $add,'active_content' => $active);
         $simpan = $this->content->update($id,$data);
         if($simpan==TRUE){
-          sukses('Article has Saved');
+          sukses('Content has Saved');
         }else{
-          gagal('Article Failed to Save');
+          gagal('Content Failed to Save');
         }
         redirect('admin/article/edit/'.$id_encrypt);
       }

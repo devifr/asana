@@ -39,13 +39,17 @@ $('#publish_date').Zebra_DatePicker();
         <input type="text" id = "alias" name="alias" class="sedang" value="<?php echo set_value('alias'); ?>"></td></tr>
       <tr><td width="100px"><b>Title</b></td><td>
         <input type="text" id = "judul" name="judul" class="sedang" value="<?php echo set_value('judul'); ?>"></td></tr>
-     <!--  <tr><td><b>Kategori</b></td><td>
-        <select name='kategori'>
-          <?php foreach ($kategori as $key => $kate) {
-          echo "<option value='$kate->id_kategori'>$kate->nama_kategori</option>";
-          } ?>
+     <tr><td><b>For Solution Service</b></td><td>
+       <select name='kategori'>
+          <option value='1'>Yes</option>
+          <option value='0'>No</option>
         </select>
-      </td></tr> -->
+<!--         <select name='kategori'>
+          <?php// foreach ($kategori as $key => $kate) {
+          //echo "<option value='$kate->id_kategori'>$kate->nama_kategori</option>";
+          } ?>
+        </select> -->
+      </td></tr>
       <!-- <tr><td><b>Subkategori</b></td><td>
         <select name='subkategori'>
           <?php foreach ($bahasa as $key => $bhs) {
