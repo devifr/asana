@@ -19,7 +19,7 @@ class Page extends CI_Controller {
   {
     $bhs = $this->lang->lang();
     $data_content['rows'] = $this->content->get_by_alias('about-us',$bhs);
-    $data['about_us'] = $this->content->get_by_alias('about-us',$bhs)->row();
+    $data['about_us'] = $this->content->get_by_alias('about-us-footer',$bhs)->row();
     $data['vision'] = $this->content->get_by_alias('vision',$bhs)->row();
     $data['mission'] = $this->content->get_by_alias('mision',$bhs)->row();
     $data['config'] = $this->config_website->get_by_id('1', $bhs)->row();
@@ -37,7 +37,7 @@ class Page extends CI_Controller {
     $bhs = $this->lang->lang();
     $data_content['rows'] = $this->content->get_by_alias('solution',$bhs);
     $data_client['clients'] = $this->client->get_all_active()->result();
-    $data['about_us'] = $this->content->get_by_alias('about-us',$bhs)->row();
+    $data['about_us'] = $this->content->get_by_alias('about-us-footer',$bhs)->row();
     $data['vision'] = $this->content->get_by_alias('vision',$bhs)->row();
     $data['mission'] = $this->content->get_by_alias('mision',$bhs)->row();
     $data['config'] = $this->config_website->get_by_id('1')->row();
@@ -54,7 +54,7 @@ class Page extends CI_Controller {
     $bhs = $this->lang->lang();
     $data_content['rows'] = $this->content->get_by_alias('service',$bhs);
     $data_client['clients'] = $this->client->get_all_active()->result();
-    $data['about_us'] = $this->content->get_by_alias('about-us',$bhs)->row();
+    $data['about_us'] = $this->content->get_by_alias('about-us-footer',$bhs)->row();
     $data['vision'] = $this->content->get_by_alias('vision',$bhs)->row();
     $data['mission'] = $this->content->get_by_alias('mision',$bhs)->row();
     $data['config'] = $this->config_website->get_by_id('1')->row();

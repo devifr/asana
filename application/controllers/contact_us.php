@@ -20,7 +20,7 @@ class Contact_us extends CI_Controller {
     $bhs = $this->lang->lang();
     $data_content['content'] = $this->content->get_by_alias('contact-us-page',$bhs)->row();
     $data_content['config'] = $this->config_website->get_by_id('1', $bhs)->row();
-    $data['about_us'] = $this->content->get_by_alias('about-us',$bhs)->row();
+    $data['about_us'] = $this->content->get_by_alias('about-us-footer',$bhs)->row();
     $data['vision'] = $this->content->get_by_alias('vision',$bhs)->row();
     $data['mission'] = $this->content->get_by_alias('mision',$bhs)->row();
     $data['config'] = $this->config_website->get_by_id('1', $bhs)->row();

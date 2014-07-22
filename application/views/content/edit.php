@@ -41,24 +41,22 @@ $(document).ready(function(){
       </td></tr>
       <tr><td width="100px"><b>Title Article</b></td><td>
         <input type="text" id = "judul" name="judul" class="sedang" value="<?php echo $row->judul_content; ?>"></td></tr>
-      <tr><td width="100px"><b>Alias URL</b></td><td>
-        <input type="text" id = "alias" name="alias" class="sedang" value="<?php echo $row->alias_content; ?>"></td></tr>
       <tr><td><b>For Solution Service</b></td><td>
        <select name='kategori'>
           <option value='1'>Yes</option>
-          <option value='0'>No</option>
+          <option value='0' <?php if($row->kategori_id == 0) echo "selected=selected"; ?>>No</option>
         </select>
 <!--         <select name='kategori'>
           <?php// foreach ($kategori as $key => $kate) {
           //echo "<option value='$kate->id_kategori'>$kate->nama_kategori</option>";
-          } ?>
+         // } ?>
         </select> -->
       </td></tr>
       <!-- <tr><td><b>Subkategori</b></td><td>
         <select name='subkategori'>
-          <?php foreach ($bahasa as $key => $bhs) {
-          echo "<option value='$bhs->id_bahasa' >$bhs->nama_bahasa</option>";
-          } ?>
+          <?php // foreach ($bahasa as $key => $bhs) {
+          // echo "<option value='$bhs->id_bahasa' >$bhs->nama_bahasa</option>";
+          //} ?>
         </select>
       </td></tr> -->
       <tr><td><b>Description</b></td><td><textarea name="description" id="content"><?php echo $row->description; ?></textarea></td></tr>

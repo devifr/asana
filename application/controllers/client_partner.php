@@ -20,7 +20,7 @@ class Client_partner extends CI_Controller {
     $data_partner['content'] = $this->content->get_by_alias('partner-client-page',$bhs)->row();
     $data_partner['partners'] = $this->partner->get_all_active();
     $data_client['clients'] = $this->client->get_all_active()->result();
-    $data['about_us'] = $this->content->get_by_alias('about-us',$bhs)->row();
+    $data['about_us'] = $this->content->get_by_alias('about-us-footer',$bhs)->row();
     $data['vision'] = $this->content->get_by_alias('vision',$bhs)->row();
     $data['mission'] = $this->content->get_by_alias('mision',$bhs)->row();
     $data['config'] = $this->config_website->get_by_id('1')->row();

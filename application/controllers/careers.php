@@ -24,7 +24,7 @@ class Careers extends CI_Controller {
     $data_banner['banners'] = $this->banner->get_all($bhs);
     $data_content['careers'] = $this->career->get_all_limit('10');
     $data_content['content'] = $this->content->get_by_alias('career-page', $bhs)->row();
-    $data['about_us'] = $this->content->get_by_alias('about-us',$bhs)->row();
+    $data['about_us'] = $this->content->get_by_alias('about-us-footer',$bhs)->row();
     $data['vision'] = $this->content->get_by_alias('vision',$bhs)->row();
     $data['mission'] = $this->content->get_by_alias('mision',$bhs)->row();
     $data['config'] = $this->config_website->get_by_id('1')->row();
@@ -64,7 +64,7 @@ class Careers extends CI_Controller {
 
     $data_content['rows'] = $this->career->get_by_id($id);
     $data_content['id_encrypt'] = $id_encrypt;
-    $data['about_us'] = $this->content->get_by_alias('about-us',$bhs)->row();
+    $data['about_us'] = $this->content->get_by_alias('about-us-footer',$bhs)->row();
     $data['vision'] = $this->content->get_by_alias('vision',$bhs)->row();
     $data['mission'] = $this->content->get_by_alias('mision',$bhs)->row();
     $data['config'] = $this->config_website->get_by_id('1')->row();

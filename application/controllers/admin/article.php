@@ -64,7 +64,7 @@ class Article extends CI_Controller {
   public function save_data()
   {
       $cekLogin = $this->simpleauth->cekBelumLogin();
-      $this->form_validation->set_rules('alias', 'Alias URL', 'required|is_unique[content.alias_content]');
+      // $this->form_validation->set_rules('alias', 'Alias URL', 'required|is_unique[content.alias_content]');
       $this->form_validation->set_rules('judul', 'Judul Content', 'required');
       $this->form_validation->set_rules('description', 'Description Content', 'required');
       $this->form_validation->set_rules('bahasa', 'Language', 'required');
@@ -77,7 +77,7 @@ class Article extends CI_Controller {
       }
       else
       {
-        $alias = $this->input->post('alias');
+        // $alias = $this->input->post('alias');
         $judul = $this->input->post('judul');
         $description = $this->input->post('description');
         $bahasa = $this->input->post('bahasa');
@@ -87,7 +87,7 @@ class Article extends CI_Controller {
         $created_at = date('Y-m-d');
         $add = $this->input->post('add');
         $active = $this->input->post('active');
-        $data = array('alias_content'=>$alias,'judul_content' => $judul,'description' => $description,'kategori_id' => $kategori, 'bahasa_id' => $bahasa,
+        $data = array('judul_content' => $judul,'description' => $description,'kategori_id' => $kategori, 'bahasa_id' => $bahasa,
         'publish_date' => $publish_date,'created_at' => $created_at,'add_other_content' => $add,'hits' => $hits,'active_content' => $active);
         $simpan = $this->content->insert_data($data);
         if($simpan==TRUE){
@@ -103,7 +103,7 @@ class Article extends CI_Controller {
   {
       $id = $this->encrypt->decode($id_encrypt);
       $cekLogin = $this->simpleauth->cekBelumLogin();
-      $this->form_validation->set_rules('alias', 'Alias URL', 'required|is_unique_for_edit[content.alias_content]');
+      // $this->form_validation->set_rules('alias', 'Alias URL', 'required|is_unique_for_edit[content.alias_content]');
       $this->form_validation->set_rules('judul', 'Judul Content', 'required');
       $this->form_validation->set_rules('description', 'Description Content', 'required');
       $this->form_validation->set_rules('bahasa', 'Language', 'required');
@@ -116,7 +116,7 @@ class Article extends CI_Controller {
       }
       else
       {
-        $alias = $this->input->post('alias');
+        // $alias = $this->input->post('alias');
         $judul = $this->input->post('judul');
         $description = $this->input->post('description');
         $bahasa = $this->input->post('bahasa');
@@ -124,7 +124,7 @@ class Article extends CI_Controller {
         $publish_date = $this->input->post('publish_date');
         $active = $this->input->post('active');
         $add = $this->input->post('add');
-        $data = array('alias_content'=>$alias,'judul_content' => $judul ,'description' => $description,'kategori_id' => $kategori, 'bahasa_id' => $bahasa,
+        $data = array('judul_content' => $judul ,'description' => $description,'kategori_id' => $kategori, 'bahasa_id' => $bahasa,
         'publish_date' => $publish_date,'add_other_content' => $add,'active_content' => $active);
         $simpan = $this->content->update($id,$data);
         if($simpan==TRUE){

@@ -126,7 +126,7 @@ $(document).ready(function(){
                       <img src="<?php echo base_url('asset/images/admin/img/remove.png');?>" width="16" height="16" title="Delete">
                     </a> -->
                         <a href="<?php echo base_url().'admin/article/edit/'.$id_encrypt; ?>"><img src="<?php echo base_url('asset/images/admin/img/folderup_16.png');?>" width="16" height="16" title="Edit Data"></a>
-                        <a href="<?php echo base_url().'admin/article/view/'.$id_encrypt; ?>"><img src="<?php echo base_url('asset/images/admin/img/detail.png');?>" title="View"></a> </div></td>
+                        <!-- <a href="<?php //echo base_url().'admin/article/view/'.$id_encrypt; ?>"><img src="<?php echo base_url('asset/images/admin/img/detail.png');?>" title="View"></a> </div></td> -->
                 </tr>
             <?php
             }

@@ -28,7 +28,7 @@ class Home extends CI_Controller {
     $data_section['section2'] = $this->section->get_by_alias('section2',$bhs)->row();
     $data_section['section3'] = $this->section->get_by_alias('section3',$bhs)->row();
     $data_section['about_us'] = $this->content->get_by_alias('about-us',$bhs)->row();
-    $data['about_us'] = $this->content->get_by_alias('about-us',$bhs)->row();
+    $data['about_us'] = $this->content->get_by_alias('about-us-footer',$bhs)->row();
     $data['vision'] = $this->content->get_by_alias('vision',$bhs)->row();
 		$data['mission'] = $this->content->get_by_alias('mision',$bhs)->row();
     $data['config'] = $this->config_website->get_by_id('1')->row();
