@@ -63,6 +63,7 @@ class Client extends CI_Controller {
       $judul = $this->input->post('judul');
       $image = $this->input->post('image');
       $link = $this->input->post('link');
+      $scope = $this->input->post('scope');
       $active = $this->input->post('active');
       $created = date("y-m-d");
       //upload gambar
@@ -83,7 +84,7 @@ class Client extends CI_Controller {
         }
 
       $data = array('judul_client' =>$judul,'image' =>$image,'created_at' =>$created,'active_client' =>$active,
-        'link' =>$link);
+        'link' =>$link, 'scope'=>$scope);
       $update = $this->client->insert_data($data);
       if($update==TRUE){
           sukses('Data has Saved');
@@ -108,6 +109,7 @@ class Client extends CI_Controller {
       $judul = $this->input->post('judul');
       $image = $this->input->post('image');
       $image2 = $this->input->post('image2');
+      $scope = $this->input->post('scope');
       $link = $this->input->post('link');
       $active = $this->input->post('active');
       //upload gambar
@@ -121,16 +123,19 @@ class Client extends CI_Controller {
         $image = $file1['file_name'];
         if (!$upload1)
         {
-          $image = $image2;
-          // gagal($this->upload->display_errors());
-          // redirect('admin/client/edit/'.$id_encrypt);
+          if ($image=='') {
+            $image = $image2;
+          }else{
+            gagal($this->upload->display_errors());
+            redirect('admin/client/edit/'.$id_encrypt);
+          }
         }else{
           $this->client->delete_img($id);
         }
       }
 
       $data = array('judul_client' =>$judul,'image' =>$image,'created_at' =>$created,'active_client' =>$active,
-        'link' =>$link);
+        'link' =>$link, 'scope'=>$scope);
       $update = $this->client->update($id,$data);
       if($update==TRUE){
           sukses('Data has Saved');

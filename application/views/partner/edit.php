@@ -22,12 +22,13 @@
     $id = $this->encrypt->encode($row->id_partner);
   ?>
   <div id="content_left">
-  <form id="partner" method="post" name="partner" action="<?php echo base_url('index.php/admin/partner/update_data'.$id); ?>" enctype="multipart/form-data">
+  <form id="partner" method="post" name="partner" action="<?php echo base_url('index.php/admin/partner/update_data/'.$id); ?>" enctype="multipart/form-data">
     <table width="95%">
       <tr><td><b>Title Partner</b></td><td><input type="text" name="judul" value="<?php echo $row->judul_partner ?>" /></td></tr>
       <tr><td><b>Image Partner</b></td><td><input type="file" name="image" /><input type="hidden" name="image2" value="<?php echo $row->image; ?>" />
         </td></tr>
       <tr><td><b>Link Partner</b></td><td><input type="text" name="link" value="<?php echo $row->link ?>" /></td></tr>
+      <tr><td><b>Description</b></td><td><textarea name="description"><?php echo $row->description ?></textarea></td></tr>
       <tr><td><b>Active</b></td><td>
         <select name='active'>
           <option value='1'>Yes</option>

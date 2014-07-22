@@ -63,6 +63,7 @@ class Partner extends CI_Controller {
       $judul = $this->input->post('judul');
       $image = $this->input->post('image');
       $link = $this->input->post('link');
+      $description = $this->input->post('description');
       $active = $this->input->post('active');
       $created = date("y-m-d");
       //upload gambar
@@ -83,7 +84,7 @@ class Partner extends CI_Controller {
         }
 
       $data = array('judul_partner' =>$judul,'image' =>$image,'created_at' =>$created,'active_partner' =>$active,
-        'link' =>$link);
+        'link' =>$link, 'description' => $description);
       $update = $this->partner->insert_data($data);
       if($update==TRUE){
           sukses('Data has Saved');
@@ -109,7 +110,10 @@ class Partner extends CI_Controller {
       $image = $this->input->post('image');
       $image2 = $this->input->post('image2');
       $link = $this->input->post('link');
+      $description = $this->input->post('description');
       $active = $this->input->post('active');
+      $created = date("y-m-d");
+
       //upload gambar
         $config['upload_path'] = './partner/';
         $config['allowed_types'] = 'jpg|jpeg|png|gif';
@@ -121,16 +125,19 @@ class Partner extends CI_Controller {
         $image = $file1['file_name'];
         if (!$upload1)
         {
-          $image = $image2;
-          // gagal($this->upload->display_errors());
-          // redirect('admin/partner/edit/'.$id_encrypt);
+          if ($image=='') {
+            $image = $image2;
+          }else{
+            gagal($this->upload->display_errors());
+            redirect('admin/partner/edit/'.$id_encrypt);
+          }
         }else{
           $this->partner->delete_img($id);
         }
       }
 
       $data = array('judul_partner' =>$judul,'image' =>$image,'created_at' =>$created,'active_partner' =>$active,
-        'link' =>$link);
+        'link' =>$link, 'description' => $description);
       $update = $this->partner->update($id,$data);
       if($update==TRUE){
           sukses('Data has Saved');

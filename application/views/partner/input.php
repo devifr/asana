@@ -24,6 +24,7 @@
       <tr><td><b>Image Partner</b></td><td><input type="file" name="image" value="<?php echo set_value('image'); ?>" />
         </td></tr>
       <tr><td><b>Link Partner</b></td><td><input type="text" name="link" value="<?php echo set_value('link'); ?>" /></td></tr>
+      <tr><td><b>Description</b></td><td><textarea name="description"><?php echo set_value('description') ?></textarea></td></tr>
       <tr><td><b>Active</b></td><td>
         <select name='active'>
           <option value='1'>Yes</option>

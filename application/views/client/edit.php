@@ -22,7 +22,7 @@
     $id = $this->encrypt->encode($row->id_client);
   ?>
   <div id="content_left">
-  <form id="client" method="post" name="client" action="<?php echo base_url('index.php/admin/client/update_data'.$id); ?>" enctype="multipart/form-data">
+  <form id="client" method="post" name="client" action="<?php echo base_url('index.php/admin/client/update_data/'.$id); ?>" enctype="multipart/form-data">
     <table width="95%">
       <tr><td><b>Title Client</b></td><td><input type="text" name="judul" value="<?php echo $row->judul_client ?>" /></td></tr>
       <tr><td><b>Image Client</b></td><td><input type="file" name="image" /><input type="hidden" name="image2" value="<?php echo $row->image; ?>" />
