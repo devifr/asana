@@ -389,7 +389,7 @@ input[type=submit], input[type=file], input[type=button], button[type=submit], b
 	padding-bottom: 30px;
 }
 .envor-section-bg1 {
-	background-image: url(../img/bg-back.jpg);
+	background-image: url(../../images/frontend/bg-back.jpg);
 	background-size: cover;
 	background-color: transparent !important;
 	background-attachment: fixed;

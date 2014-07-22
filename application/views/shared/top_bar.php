@@ -67,11 +67,9 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="envor-relative">
-              <a href="index.php">
+              <a href="<?php echo base_url("$bhs"); ?>">
                 <div class="envor-logo">
-                  <img src="<?php echo images_url('frontend/site-logo.png'); ?>" alt="Envor Logo">
-                  <p class="logo">PT.ARSANA JAYA UTAMA</p>
-                  <p class="tagline italic bold">Smart IT Solutions</p>
+                  <img src="<?php echo images_url('frontend/logo-arsana.png'); ?>" alt="Envor Logo">
                 </div>
               </a>
               <!-- Website Menu -->
