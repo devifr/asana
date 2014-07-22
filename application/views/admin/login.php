@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Login Form</title>
-<link rel="shortcut icon" href="<?php echo base_url(); ?>asset/images/icon.png"> 
+<link rel="shortcut icon" href="<?php echo base_url(); ?>asset/images/icon.png">
 <!--STYLESHEETS-->
 <link href="<?php echo base_url(); ?>asset/css/login/style.css" rel="stylesheet" type="text/css" />
 <!--SCRIPTS-->
@@ -17,7 +17,7 @@ $(document).ready(function() {
   $(".username").blur(function() {
     $(".user-icon").css("left","0px");
   });
-  
+
   $(".password").focus(function() {
     $(".pass-icon").css("left","-48px");
   });
@@ -29,7 +29,7 @@ $(document).ready(function() {
 
 </head>
 <body>
-<img src="<?php echo base_url(); ?>asset/images/login/background-trikarsa.jpg" id="low" />
+<img src="<?php echo base_url(); ?>asset/images/login/background.jpg" id="low" />
 <!--WRAPPER-->
 <div id="wrapper">
 
@@ -42,20 +42,20 @@ $(document).ready(function() {
 <form name="login-form" class="login-form" action="<?php echo base_url(); ?>index.php/admin/admin/Dologin" method="post">
   <!--HEADER-->
     <div class="header">
-    <!--TITLE--><h1 align="center"><img src="<?php echo base_url(); ?>asset/images/logo-trikarsa.png" width="200" /></h1>
+    <!--TITLE--><h1 align="center"><img src="<?php echo base_url(); ?>asset/images/logo-arsana.png" width="200" /></h1>
     <!--END TITLE-->
-    <!--DESCRIPTION--><span> Administrator Program By PT Trikarsa Sistemindo</span><!--END DESCRIPTION-->
+    <!--DESCRIPTION--><span> Administrator By PT Arsana Jaya Utama</span><!--END DESCRIPTION-->
     <?php echo $this->session->flashdata('msg'); ?>
     </div>
     <!--END HEADER-->
-  
+
   <!--CONTENT-->
     <div class="content">
   <!--USERNAME--><input name="username" type="text" class="input username" value="Username" onfocus="this.value=''" /><!--END USERNAME-->
     <!--PASSWORD--><input name="password" type="password" class="input password" value="Password" onfocus="this.value=''" /><!--END PASSWORD-->
     </div>
     <!--END CONTENT-->
-    
+
     <!--FOOTER-->
     <div class="footer">
     <!--LOGIN BUTTON--><input type="submit" name="submit" value="Login" class="button" /><!--END LOGIN BUTTON-->

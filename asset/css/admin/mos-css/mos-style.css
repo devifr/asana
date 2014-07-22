@@ -1,5 +1,5 @@
 body {
-	
+
 	margin: 0;
 	padding: 0;
 	font-family: Arial;
@@ -64,7 +64,7 @@ select:focus{-moz-box-shadow: 0px 0px 5px #dcdcdc;-webkit-box-shadow: 0px 0px 5p
 textarea:focus{-moz-box-shadow: 0px 0px 5px #dcdcdc;-webkit-box-shadow: 0px 0px 5px #dcdcdc; background:#feffdc;text-shadow: 1px 0px #fff;}
 textarea {padding: 4px;color: #5b5b5b;border: 1px solid #dcdcdc;
 -moz-border-radius: 3px;-webkit-border-radius: 3px;-o-border-radius: 3px; width: 100%;
-height: 230px;resize: none;}	
+height: 230px;resize: none;}
 table {border:none;font-size: 12px;}
 td{border:none; }
 
@@ -77,7 +77,7 @@ tr.data small a{color: #fff;}
 tr.data small{color: #fff;}
 tr.data:hover small a{color: #527e19;}
 tr.data:hover small a:hover{color: #000;}
-tr.data:hover small {color: #5b5b5b;}		
+tr.data:hover small {color: #5b5b5b;}
 .quoteOfDay {
 	border: 1px solid #cbe0b5;
 	float: left;
@@ -155,16 +155,17 @@ margin: 10px;
 }
 .inHeader {
 	float: center;
-	background: url(../../../images/admin/img/logo.png) no-repeat left center;
+	background: url(../../../images/logo-arsana.png) no-repeat left center;
 	margin: auto;
 	margin-left:25px; margin-right:20px;
 	height: 45px;
 	padding: 15px;
 	border-right: 0px solid #dcdcdc;
 	border-left: 0px solid #dcdcdc;
+	background-size: 300px 50px
 }
 .inHeaderLogin {
-	background: url(../../../images/admin/img/logo.png) no-repeat left center;
+	background: url(../../../images/logo-arsana.png) no-repeat left center;
 	height: 75px;
 }
 .mosAdmin {
