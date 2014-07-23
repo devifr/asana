@@ -8,6 +8,24 @@ body {
 	overflow-x: hidden;
 	text-align: center;
 }
+.section_solutions{
+	background-image: url(../../images/breadcrumbs/solutions.jpg)!important;
+}
+.section_services{
+	background-image: url(../../images/breadcrumbs/services.jpg)!important;	
+}
+.section_profile{
+	background-image: url(../../images/breadcrumbs/overview.jpg)!important;
+}
+.section_partners{
+	background-image: url(../../images/breadcrumbs/partners.png)!important;
+}
+.section_career{
+	background-image: url(../../images/breadcrumbs/career.png)!important;
+}
+.section_contact{
+	background-image: url(../../images/breadcrumbs/contact.jpg)!important;
+}
 .modal {
 	position: fixed;
 	top: 10%;

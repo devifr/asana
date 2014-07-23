@@ -1,4 +1,4 @@
-<section class="envor-page-title-1" data-stellar-background-ratio="0.5">
+<section class="envor-page-title-1 section_career" data-stellar-background-ratio="0.5">
   <div class="container">
     <div class="row">
       <div class="col-lg-9 col-md-9 col-sm-9">
