@@ -5,7 +5,7 @@
         <article class="envor-feature">
           <div class="envor-feature-inner">
             <header>
-              <i class="fa fa-globe back-black"></i>
+              <i class="fa fa-briefcase back-black"></i>
               <?php echo $section1->title; ?>
             </header>
             <p><?php echo $section1->description; ?></p>
@@ -27,7 +27,7 @@
         <article class="envor-feature">
           <div class="envor-feature-inner">
             <header>
-              <i class="fa fa-trophy back-black"></i>
+              <i class="fa fa-qrcode back-black"></i>
               <?php echo $section3->title; ?>
             </header>
             <p><?php echo $section3->description; ?></p>
