@@ -1047,7 +1047,7 @@ input[type=submit], input[type=file], input[type=button], button[type=submit], b
 	float: left;
 }
 .envor-layerslider .envor-layerslider-block {
-	width: 300px;
+	width: 600px;
 	height: 150px;
 	padding: 30px;
 	-moz-box-sizing: border-box;
