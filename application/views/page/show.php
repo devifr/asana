@@ -1,6 +1,6 @@
 <div class="envor-content">
   <?php $data['row'] = $rows->row(); ?>
-  <?php $this->load->view("shared/breadcrumb_profile", $data) ?>
+  <?php $this->load->view("shared/$breadcumb", $data) ?>
   <section class="envor-section envor-single-page">
     <div class="container">
       <div class="row">
