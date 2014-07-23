@@ -44,7 +44,7 @@ $(document).ready(function() {
     <div class="header">
     <!--TITLE--><h1 align="center"><img src="<?php echo base_url(); ?>asset/images/logo-arsana.png" width="200" /></h1>
     <!--END TITLE-->
-    <!--DESCRIPTION--><span> Administrator By PT Arsana Jaya Utama</span><!--END DESCRIPTION-->
+    <!--DESCRIPTION--><span align="center"> Administrator By Creative Design Jakarta</span><!--END DESCRIPTION-->
     <?php echo $this->session->flashdata('msg'); ?>
     </div>
     <!--END HEADER-->
