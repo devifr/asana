@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Banner_slideshow extends CI_Controller {
-  
+
   public function __construct()
   {
     parent::__construct();
@@ -78,10 +78,13 @@ class Banner_slideshow extends CI_Controller {
           gagal($this->upload->display_errors());
           redirect('admin/banner_slideshow/input/');
         }
-      $title = $this->input->post('title');  
-      $active = $this->input->post('active');  
-      $bahasa = $this->input->post('bahasa');  
-      $data = array('title_banner_slide'=>$title,'banner_slide_name' => $banner,'active_banner_slide'=>$active,'bahasa_id'=>$bahasa);
+      $title = $this->input->post('title');
+      $active = $this->input->post('active');
+      $bahasa = $this->input->post('bahasa');
+      $tag_banner = $this->input->post('tag_banner');
+      $description = $this->input->post('description');
+      $data = array('title_banner_slide'=>$title,'banner_slide_name' => $banner,'active_banner_slide'=>$active,'bahasa_id'=>$bahasa,
+                    'tag_banner'=>$tag_banner, 'description_banner'=>$description);
       $update = $this->banner->insert_data($data);
         if($update==TRUE){
          sukses('Data Has Saved');
@@ -122,10 +125,13 @@ class Banner_slideshow extends CI_Controller {
           // gagal($this->upload->display_errors());
           // redirect('admin/banner_slideshow/edit/'.$id_encrypt);
         }
-      $title = $this->input->post('title');  
-      $active = $this->input->post('active');  
-      $bahasa = $this->input->post('bahasa');  
-      $data = array('title_banner_slide'=>$title,'banner_slide_name' => $banner,'active_banner_slide'=>$active,'bahasa_id'=>$bahasa);
+      $title = $this->input->post('title');
+      $active = $this->input->post('active');
+      $bahasa = $this->input->post('bahasa');
+      $tag_banner = $this->input->post('tag_banner');
+      $description = $this->input->post('description');
+      $data = array('title_banner_slide'=>$title,'banner_slide_name' => $banner,'active_banner_slide'=>$active,'bahasa_id'=>$bahasa,
+                    'tag_banner'=>$tag_banner, 'description_banner'=>$description);
       $delete = $this->banner->delete_img($id);
       if($delete==TRUE)
         $update = $this->banner->update($id,$data);
@@ -161,7 +167,7 @@ class Banner_slideshow extends CI_Controller {
          $data = array('active_banner_slide' => $aktif);
          $update = $this->banner->update($idcheck,$data);
        }
-       
+
        if($update){
         sukses("$msgsukes");
       }else{
@@ -178,7 +184,7 @@ class Banner_slideshow extends CI_Controller {
       }
       redirect('admin/banner_slideshow/');
       }
-  }   
+  }
 
   public function delete_data($id)
   {
@@ -191,7 +197,7 @@ class Banner_slideshow extends CI_Controller {
       }else{
         gagal("Data Failed to Deleted!");
       }
-      redirect('admin/banner_slideshow/'); 
+      redirect('admin/banner_slideshow/');
    }
    else
    {

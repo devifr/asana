@@ -12,9 +12,9 @@
       </tr>
     </table>
   </div>
-  <?php 
+  <?php
   echo $this->session->flashdata('msg');
-  if($rows->num_rows()>0){ 
+  if($rows->num_rows()>0){
     $row = $rows->row();
     $id = $this->encrypt->encode($row->id_banner_slide);
   ?>
@@ -36,12 +36,18 @@
           echo "<option value='$bhs->id_bahasa'  "; if($row->bahasa_id == $bhs->id_bahasa) echo "selected=selected"; echo ">$bhs->nama_bahasa</option>";
           } ?>
         </select></td></tr>
+      <tr><td><b>Tag</b></td><td>
+        <input type="text" name="tag_banner" id="tag" value="<?php echo $row->tag_banner; ?>">
+      </td></tr>
+      <tr><td><b>Description</b></td><td>
+        <textarea name="description" id="description"><?php echo $row->description_banner; ?></textarea>
+      </td></tr>
       <tr><td><b>Active</b></td><td>
         <select name='active'>
           <option value='1'>Yes</option>
           <option value='0' <?php if($row->active_banner_slide == '0') echo 'selected=selected' ?>>No</option>
         </select>
-      </td></tr>  
+      </td></tr>
       <tr><td></td><td><input type="submit" class="button" value="Save">
       <input type="reset" class="button" value="Reset">
       </td></tr>
@@ -55,7 +61,7 @@
     </table>
   </form>
   </div>
-  
+
   <div id="content_right">
     <div id="smallRight">
     <h3>Detail </h3>

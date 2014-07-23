@@ -25,6 +25,7 @@ class Page extends CI_Controller {
     $data['config'] = $this->config_website->get_by_id('1', $bhs)->row();
     $data_partner['partners'] = $this->partner->get_all($bhs);
     $data_sol_ser['rows'] = $this->content->get_all_by_kategori('1',$bhs);
+    $data_content['breadcumb'] = 'breadcrumb_profile';
     $this->load->view('shared/head');
     $this->load->view('shared/top_bar', $data);
     $this->load->view('page/show',$data_content);
@@ -42,6 +43,7 @@ class Page extends CI_Controller {
     $data['mission'] = $this->content->get_by_alias('mision',$bhs)->row();
     $data['config'] = $this->config_website->get_by_id('1')->row();
     $data_partner['partners'] = $this->partner->get_all($bhs);
+    $data_content['breadcumb'] = 'breadcrumb_solutions';
     $this->load->view('shared/head');
     $this->load->view('shared/top_bar', $data);
     $this->load->view('page/show',$data_content);
@@ -59,6 +61,7 @@ class Page extends CI_Controller {
     $data['mission'] = $this->content->get_by_alias('mision',$bhs)->row();
     $data['config'] = $this->config_website->get_by_id('1')->row();
     $data_partner['partners'] = $this->partner->get_all($bhs);
+    $data_content['breadcumb'] = 'breadcrumb_services';
     $this->load->view('shared/head');
     $this->load->view('shared/top_bar', $data);
     $this->load->view('page/show',$data_content);

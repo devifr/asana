@@ -1,6 +1,6 @@
  <div id="wrapper">
   <div id="rightContent">
-  
+
   <div id="navigasi">
     <table width="100%" border="0">
       <tr>
@@ -13,7 +13,7 @@
       </tr>
     </table>
   </div>
-  <?php 
+  <?php
   echo $this->session->flashdata('msg'); ?>
   <div id="tbl" style="float:left;">
   <h3>Insert Banner</h3>
@@ -33,12 +33,18 @@
           echo "<option value='$bhs->id_bahasa'>$bhs->nama_bahasa</option>";
           } ?>
         </select></td></tr>
+      <tr><td><b>Tag</b></td><td>
+        <input type="text" name="tag_banner" id="tag" value="">
+      </td></tr>
+      <tr><td><b>Description</b></td><td>
+        <textarea name="description" id="description"></textarea>
+      </td></tr>
       <tr><td><b>Active</b></td><td>
         <select name='active'>
           <option value='1'>Yes</option>
           <option value='0'>No</option>
         </select>
-      </td></tr>  
+      </td></tr>
       <tr><td></td><td><input type="submit" class="button" value="Save">
       <input type="reset" class="button" value="Reset">
       </td></tr>
@@ -52,7 +58,7 @@
     </table>
   </form>
   </div>
-  
+
   <div id="content_right">
     <div id="smallRight">
     <h3>Detail </h3>
