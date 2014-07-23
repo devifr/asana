@@ -3,13 +3,13 @@
 <head>
 <?php $header = $this->config_website_model->get_by_id(1)->row(); ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>PT.Trikarsa Sempurna Sistemindo | 
+<title>PT.Arsana Jaya Utama |
 <?php
- if($this->uri->segment(5)!='') { echo ucwords(str_replace('-', ' ', $this->uri->segment(5))); } 
- else if($this->uri->segment(4)!='') { echo ucwords(str_replace('-', ' ', $this->uri->segment(4))); } 
- else if($this->uri->segment(3)!='') { echo ucwords(str_replace('-', ' ', $this->uri->segment(3))); } 
- else if($this->uri->segment(2)!='') { echo ucwords(str_replace('-', ' ', $this->uri->segment(2))); } 
- else { echo " Home "; } 
+ if($this->uri->segment(5)!='') { echo ucwords(str_replace('-', ' ', $this->uri->segment(5))); }
+ else if($this->uri->segment(4)!='') { echo ucwords(str_replace('-', ' ', $this->uri->segment(4))); }
+ else if($this->uri->segment(3)!='') { echo ucwords(str_replace('-', ' ', $this->uri->segment(3))); }
+ else if($this->uri->segment(2)!='') { echo ucwords(str_replace('-', ' ', $this->uri->segment(2))); }
+ else { echo " Home "; }
 ?>
 </title>
 <meta http-equiv="Copyright" content="<?php echo $header->website_name; ?>">

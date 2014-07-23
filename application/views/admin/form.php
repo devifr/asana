@@ -7,7 +7,7 @@
 <meta name="keywords" content="Admin Page">
 <meta name="author" content="Ari Rusmanto">
 <meta name="language" content="Bahasa Indonesia">
-<link rel="shortcut icon" href="mos-css/img/icon trikarsa.png"> <!--Pemanggilan gambar favicon-->
+<link rel="shortcut icon" href="mos-css/img/site-logo.png"> <!--Pemanggilan gambar favicon-->
 <link rel="stylesheet" type="text/css" href="mos-css/mos-style.css"> <!--pemanggilan file css-->
 </head>
 
@@ -49,8 +49,8 @@
   <div id="tbl" style="float:left;">
   <h3>Form</h3>
   <div id="content_left">
-	
-	
+
+
 		<table width="95%">
 			<tr><td width="125px"><b>Input text pendek</b></td><td><input type="text" class="pendek"></td></tr>
 			<tr><td><b>Input text sedang</b></td><td><input type="text" class="sedang"></td></tr>
@@ -77,7 +77,7 @@
 			</td></tr>
 		</table>
   </div>
-  
+
   <div id="content_right">
 		<div id="smallRight">
 		<h3>Detail </h3>
@@ -90,10 +90,10 @@
 </div>
 
   </div>
-  
-  
+
+
 <div class="clear"></div>
-<div id="footer">Administrator Program By PT Trikarsa Sistemindo . Versi 1.1.0 </div>
+<div id="footer">Administrator Program By PT Arsana Jaya Utama . Versi 1.1.0 </div>
 </div>
 </body>
 </html>

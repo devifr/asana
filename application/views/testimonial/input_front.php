@@ -10,8 +10,8 @@
   <?php $lang = $this->lang->lang(); ?>
           <h2>Client Testimonial</h2>
           <h4>Testimonial Form</h4>
-          <p>Please Write Your Testimonial For <strong>PT.Trikarsa Sempurna Sistemindo</strong>&nbsp;International. This name is protected by Indonesia copyright law</p>
-          <div id="testimonial" style="margin-bottom:30px;">  
+          <p>Please Write Your Testimonial For <strong>PT.Arsana Jaya Utama</strong>&nbsp;International. This name is protected by Indonesia copyright law</p>
+          <div id="testimonial" style="margin-bottom:30px;">
   <form id="input_category" name="input_category" method="post" action="<?php echo base_url($lang.'/testimonial/save_data'); ?>" enctype="multipart/form-data">
     <table width="95%" style="font-size:12px;">
       <tr><td>Company</td><td width="801">
@@ -40,7 +40,7 @@
         <a onclick="window.close()"><input type="button" value="Close" id="blue_button" name="reset" class="submit_btn right"></a></td>
       <td width="16"></td></tr>
     </table>
-  </form>      
+  </form>
 </div>
     </div>
 <div class="cleaner"></div>

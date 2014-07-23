@@ -28,11 +28,11 @@
       foreach ($testimonial->result() as $key_testi => $testi) {
       ?>
        <h5><?php echo $testi->title_testimonial; ?></h5>
-        <p><?php echo $testi->description_testimonial; ?> 
-       <br /></p> 
+        <p><?php echo $testi->description_testimonial; ?>
+       <br /></p>
        <strong><?php echo $testi->created_by_testimonial; ?>.</strong>
       </div>
-    <?php 
+    <?php
     }
   }
   else{
@@ -52,7 +52,7 @@
 <?php echo anchor_popup("$lang/testimonial/input/",'<input type="button" id="blue_button" value="Tambah Data" />',$atts); ?>
 </div>
   </div>
-<!-------------------------------------------------------------->   
+<!-------------------------------------------------------------->
   <div class="col_w300 float_r">
     <div id="TabbedPanels1" class="TabbedPanels">
       <ul class="TabbedPanelsTabGroup">
@@ -67,7 +67,7 @@
         </p>
         <?php } ?>
         </div>
-        
+
         <div class="TabbedPanelsContent" >
         <?php foreach ($latest_news as $key_news => $news) {
         ?>
@@ -83,12 +83,12 @@
     <div id="cs">
       <table width="200" border="0">
         <tr>
-          <td><a href="ymsgr:sendIM?tary_trikarsa"><img src="http://opi.yahoo.com/online?u=dan_exsotic&amp;m=g&amp;t=2&amp;l=us"/></a></td>
+          <td></td>
           </tr>
         </table>
     </div>
     <img src="<?php echo images_url('frontend/call_center.png'); ?>" width="300" style="margin-top:8px;" />
-    
+
     </div>
   </div>
 <!-------------------------------------------------------------->

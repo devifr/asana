@@ -59,9 +59,9 @@ stm_aix("p7i0","p1i0",[0,"Background","","",-1,-1,0,"<?php echo base_url('admin/
 stm_aix("p7i1","p1i0",[0,"Slide Banners","","",-1,-1,0,"<?php echo base_url('admin/banner_slideshow/'); ?>"]);
 stm_aix("p7i1","p1i0",[0,"Top Banner","","",-1,-1,0,"<?php echo base_url('admin/config_website/change_banner/'); ?>"]);
 stm_ep();
-stm_aix("p0i5","p0i0",[0,"Help"],50,0);
-stm_bpx("p10","p1",[]);
-stm_aix("p10i0","p1i0",[0,"CMS Trikarsa Help","","",-1,-1,0,"<?php echo base_url('admin/config_website/help/'); ?>","_blank"]);
+// stm_aix("p0i5","p0i0",[0,"Help"],50,0);
+// stm_bpx("p10","p1",[]);
+// stm_aix("p10i0","p1i0",[0,"CMS Trikarsa Help","","",-1,-1,0,"<?php echo base_url('admin/config_website/help/'); ?>","_blank"]);
 stm_ep();
 stm_ep();
 stm_em();

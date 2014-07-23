@@ -2,7 +2,7 @@
 <!-------------------------------------------------------------->
   <div class="col_w600 float_l">
   <div id="mapim">
-  <img src="<?php echo images_url("frontend/home.jpg"); ?>" width="15" /> 
+  <img src="<?php echo images_url("frontend/home.jpg"); ?>" width="15" />
   <?php echo $breadcumb;  ?>
   </div>
 <div class="content_box">
@@ -11,7 +11,7 @@
           <h2><?php echo $row->judul_content; ?></h2>
           <?php echo str_replace('src="../../../', 'src="../../../../', $row->description);
       if($row->add_other_content !=0){ ?>
-         
+
         <?php
         $bhs = $this->lang->lang();
         $url = $bhs.'/home/page/'.$row->alias_content;
@@ -21,7 +21,7 @@
           foreach ($conten_kate->result() as $key_conten_kate => $ck) {
             echo "<h5>$ck->judul_content</h5>
             ".substr(preg_replace("/<img[^>]+\>/i", "",$ck->description),0, 250);
-            if(strlen($ck->description)>250) { echo "... ".anchor($url."/".$ck->alias_content, "Read More"); } 
+            if(strlen($ck->description)>250) { echo "... ".anchor($url."/".$ck->alias_content, "Read More"); }
             echo "<br/>";
           }echo"</div>";
         }
@@ -33,18 +33,18 @@
 </div>
    	  <div class="cleaner"></div>
   </div>
-<!-------------------------------------------------------------->   
+<!-------------------------------------------------------------->
   <div class="col_w300 float_r">
     <div id="TabbedPanels1" class="TabbedPanels">
       <ul class="TabbedPanelsTabGroup">
-        <li class="TabbedPanelsTab" tabindex="0"><?php $url_menu = $this->uri->segment(4); 
+        <li class="TabbedPanelsTab" tabindex="0"><?php $url_menu = $this->uri->segment(4);
         $url_nama_menu = ucwords(str_replace('-', ' ', $url_menu));
         echo $url_nama_menu; ?></li>
         <li class="TabbedPanelsTab" tabindex="0"><?php echo lang('latest news'); ?></li>
       </ul>
       <div class="TabbedPanelsContentGroup">
         <div class="TabbedPanelsContent">
-        <?php 
+        <?php
         $lang = $this->lang->lang();
         $idmenu = $this->menu->get_by_alias($url_nama_menu)->row()->id_menu;
         $isimenu = $this->menu->get_parent_menu($idmenu);
@@ -75,7 +75,7 @@
     <div id="cs">
       <table width="200" border="0">
         <tr>
-          <td><a href="ymsgr:sendIM?tary_trikarsa"><img src="http://opi.yahoo.com/online?u=dan_exsotic&amp;m=g&amp;t=2&amp;l=us"/></a></td>
+          <td></td>
           </tr>
         </table>
     </div>

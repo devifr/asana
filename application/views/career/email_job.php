@@ -1,4 +1,4 @@
-!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
   <head>
     <title></title>
@@ -9,47 +9,47 @@
     <tr>
       <td>Title Job</td>
       <td>:</td>
-      <td><?php echo $job->title; ?></td>
+      <td></td>
     </tr>
     <tr>
       <td>Position</td>
       <td>:</td>
-      <td><?php echo $job->position; ?></td>
+      <td></td>
     </tr>
     <tr>
       <td>Divisi</td>
       <td>:</td>
-      <td><?php echo $job->devisi; ?></td>
+      <td></td>
     </tr>
     <tr>
       <td>Name</td>
       <td>:</td>
-      <td><?php echo $email['name']; ?></td>
+      <td></td>
     </tr>
     <tr>
       <td>Email</td>
       <td>:</td>
-      <td><?php echo $email['email']; ?></td>
+      <td></td>
     </tr>
     <tr>
       <td>No Phone</td>
       <td>:</td>
-      <td><?php echo $email['no_phone']; ?></td>
+      <td></td>
     </tr>
     <tr>
       <td>Address</td>
       <td>:</td>
-      <td><?php echo $email['no_phone']; ?></td>
+      <td></td>
     </tr>
     <tr>
       <td>Education</td>
       <td>:</td>
-      <td><?php echo $email['no_phone']; ?></td>
+      <td></td>
     </tr>
     <tr>
       <td>Attachment</td>
       <td>:</td>
-      <td><?php echo lamaran_url(); ?></td>
+      <td><?php //echo lamaran_url(); ?></td>
     </tr>
     <tr>
       <td colspan="3"></td>

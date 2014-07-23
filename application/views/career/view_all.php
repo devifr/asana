@@ -103,7 +103,7 @@ $(document).ready(function(){
               <?php
               if($result->num_rows()>0){
 
-               foreach ($result->result_array() as $key => $crr) {
+               foreach ($result->result() as $key => $crr) {
                 $id_encrypt = $this->encrypt->encode($crr->id_career);
               ?>
                 <tr>
@@ -116,7 +116,7 @@ $(document).ready(function(){
                       <?php if($crr->status==0){ ?>
                         <a href="<?php echo base_url().'admin/career/publish/yes/'.$id_encrypt; ?>" onclick="return confirm('Do You Want To Active This Career?');"><img src="<?php echo base_url('asset/images/admin/img/delete.png');?>" title="Unpublish" width="16" height="16"></a>
                       <?php }else{ ?>
-                        <a href="<?php echo base_url().'admin/career/publish/no/'.$id_encrypt ?>" onclick="return confirm('Do You Want To Nonactive This Career');"><img src="<?php echo base_url('asset/images/admin/img/oke.png');?>" title="Publish"></a>                    
+                        <a href="<?php echo base_url().'admin/career/publish/no/'.$id_encrypt ?>" onclick="return confirm('Do You Want To Nonactive This Career');"><img src="<?php echo base_url('asset/images/admin/img/oke.png');?>" title="Publish"></a>
                       <?php } ?>
                       </div>
                     </td>
@@ -129,7 +129,7 @@ $(document).ready(function(){
                         <a href="<?php echo base_url().'admin/career/view/'.$id_encrypt; ?>"><img src="<?php echo base_url('asset/images/admin/img/detail.png');?>" title="View"></a> </div></td>
                 </tr>
             <?php
-            } 
+            }
           }else{
             echo informasi('Data Belum Ada!');
           }

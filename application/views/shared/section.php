@@ -43,11 +43,11 @@
     <div class="row">
       <div class="col-lg-12">
         <h2>
-          <strong>PT.ASRSANA JAYA UTAMA</strong>
+          <strong>PT.ARSANA JAYA UTAMA</strong>
           <br>
           <span class='font16'>Smart IT Solutions</span>
         </h2>
-        <p><?php echo $about_us->description; ?></p>
+        <p><?php echo substr($about_us->description, 0, 430); ?></p>
         <p>
           <a href="<?php echo base_url("$bhs/page/about_us"); ?>" class="envor-btn envor-btn-primary envor-btn-normal">
             <i class="glyphicon glyphicon-question-sign"></i> <?php echo lang('view-more'); ?>

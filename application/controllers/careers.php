@@ -94,17 +94,78 @@ class Careers extends CI_Controller {
     $this->email->to($email_lamaran);
     $data_email['email'] = $email;
     $data_email['job'] = $job;
-    $this->email->subject('Application Form | '.$email['name']);
-    // $msg = $this->load->view('career/email_job',$data_email);
-    $msg = 'test';
+    $this->email->subject('Application Form');
+    $msg = "<!DOCTYPE html>
+            <html>
+              <head>
+                <title>Example</title>
+              </head>
+            <body>
+              <h3>Application Form</h3>
+                <table>
+                  <tr>
+                    <td> Date Apply </td>
+                    <td>:</td>
+                    <td>".$email['date_apply']."</td>
+                  </tr>
+                  <tr>
+                    <td>Title Job</td>
+                    <td>:</td>
+                    <td>$job->title</td>
+                  </tr>
+                  <tr>
+                    <td>Position</td>
+                    <td>:</td>
+                    <td>$job->position</td>
+                  </tr>
+                  <tr>
+                    <td>Divisi</td>
+                    <td>:</td>
+                    <td>$job->devisi</td>
+                  </tr>
+                  <tr>
+                    <td>Name</td>
+                    <td>:</td>
+                    <td>".$email['nama']."</td>
+                  </tr>
+                  <tr>
+                    <td>Email</td>
+                    <td>:</td>
+                    <td>".$email['email']."</td>
+                  </tr>
+                  <tr>
+                    <td>No Phone</td>
+                    <td>:</td>
+                    <td>".$email['no_phone']."</td>
+                  </tr>
+                  <tr>
+                    <td>Address</td>
+                    <td>:</td>
+                    <td>".$email['address']."</td>
+                  </tr>
+                  <tr>
+                    <td>Education</td>
+                    <td>:</td>
+                    <td>".$email['education']."</td>
+                  </tr>
+                  <tr>
+                    <td>Attachment</td>
+                    <td>:</td>
+                    <td>".lamaran_url($email['attach'])."</td>
+                  </tr>
+                </table>
+                <div><p>".$email['cover']."</p></div>
+              </body>
+            </html>
+            ";
     $this->email->message($msg);
+
 
     $kirim = $this->email->send();
     if($kirim==TRUE){
-      echo "<script>alert('".$this->email->print_debugger()."');</script>";
       return $kirim;
     }else{
-      echo "<script>alert('".$this->email->print_debugger()."');</script>";
+      return FALSE;
     }
   }
 
@@ -121,8 +182,8 @@ class Careers extends CI_Controller {
 
       if ($row->count == 0)
       {
-        $status = "error";
-        $msg = "You must submit the word that appears in the image";
+        gagal("You must submit the word that appears in the image");
+        redirect('careers');
       }else{
       $this->form_validation->set_rules('name_lamaran', 'Name', 'required');
       $this->form_validation->set_rules('email', 'Email', 'required');
@@ -135,7 +196,7 @@ class Careers extends CI_Controller {
         gagal(validation_errors());
         // $status = "error";
         // $msg = "Your Input Not Completed";
-        redirect('careers/apply_job/'.$id_encrypt);
+        redirect('careers');
       }
       else
       {
@@ -172,6 +233,7 @@ class Careers extends CI_Controller {
         $email['education'] = $education;
         $email['cover'] = $cover;
         $email['date_apply'] = $date_apply;
+        $email['attach'] = $attach;
 
         $data = array('career_id'=>$id_career,'name_lamaran' => $name,'email_lamaran' => $emails,'phone_lamaran' => $no_phone,
         'address_lamaran' => $address, 'education_lamaran'=>$education, 'cover_lamaran' => $cover, 'date_apply' => $date_apply,'lampiran_lamaran' => $attach);

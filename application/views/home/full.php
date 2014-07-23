@@ -8,7 +8,7 @@
   <img src="logo/home.png" width="15" /> Home / <a href="#">Careers</a></div>
 <div class="content_box" style="margin-bottom:0px;">
       <div align="center">
-        <h2>Job Vacancy PT.Trikarsa Sempurna Sistemindo</h2></div>
+        <h2>Job Vacancy PT.Arsana Jaya Utama</h2></div>
       <table width="860" border="0" align="center" cellpadding="0" cellspacing="0">
             <tbody>
               <tr>

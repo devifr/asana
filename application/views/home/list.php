@@ -2,7 +2,7 @@
 <!-------------------------------------------------------------->
   <div class="col_w600 float_l">
   <div id="mapim">
-  <img src="<?php echo images_url("frontend/home.jpg"); ?>" width="15" /> 
+  <img src="<?php echo images_url("frontend/home.jpg"); ?>" width="15" />
     <?php echo $breadcumb; ?></div>
 <div class="content_box">
   <?php
@@ -25,7 +25,7 @@
       </div>
 </div>
   </div>
-<!-------------------------------------------------------------->   
+<!-------------------------------------------------------------->
   <div class="col_w300 float_r">
     <div id="TabbedPanels1" class="TabbedPanels">
       <ul class="TabbedPanelsTabGroup">
@@ -55,8 +55,8 @@
     <div id="cs">
       <table width="200" border="0">
         <tr>
-          <td><a href="ymsgr:sendIM?tary_trikarsa"><img src="http://opi.yahoo.com/online?u=dan_exsotic&amp;m=g&amp;t=2&amp;l=us"/></a></td>
-          </tr>
+          <td></td>
+        </tr>
         </table>
     </div>
     <div id="adress">

@@ -16,11 +16,11 @@ $s(document).ready(function() {
                 <div id="mapim"> <img src="<?php echo images_url('frontend/home.png'); ?>" width="15" /> <?php echo $breadcumb; ?></div>
                 <div class="content_box" style="margin-bottom:0px;">
                   <div align="center">
-                    <h2>Gallery Foto PT.Trikarsa Sempurna Sistemindo</h2>
+                    <h2>Gallery Foto PT.Arsana Jaya Utama</h2>
                   </div>
                   <h4 align="center">&nbsp;</h4>
                   <?php
-                    if($gallerys->num_rows()>0){ 
+                    if($gallerys->num_rows()>0){
                       foreach ($gallerys->result() as $key_gal => $gallery) {
                         echo "<div id='img'><a class='fancybox' href='".base_url('gallery/'.$gallery->nama_gallery)."' data-fancybox-group='gallery' title='".$gallery->judul_gallery."'><img src='".gallery_url($gallery->nama_gallery)."' class='gallery' /></a></div>";
                       }
@@ -37,6 +37,6 @@ $s(document).ready(function() {
           </div>
     </div>
 <!--------------------------------------------------------------><!-- end of middle -->
-  </div> 
+  </div>
   <!-- end of top -->
 </div> <!-- end of top wrapper --><!-- end of main -->
