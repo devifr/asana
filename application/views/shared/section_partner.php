@@ -9,7 +9,7 @@
               <div class="envor-partner-logo">
                 <div class="inner">
                   <a href="<?php echo $partner->link; ?>" target="_blank">
-                    <img src="<?php echo partner_url($partner->image); ?>" alt="<?php echo $partner->judul_partner; ?>"><span class="helper"></span>
+                    <img src="<?php echo partner_url($partner->image); ?>" height="160px" alt="<?php echo $partner->judul_partner; ?>"><span class="helper"></span>
                   </a>
                 </div>
               </div>

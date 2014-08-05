@@ -112,6 +112,7 @@ class Client extends CI_Controller {
       $scope = $this->input->post('scope');
       $link = $this->input->post('link');
       $active = $this->input->post('active');
+      $created = date("y-m-d");
       //upload gambar
         $config['upload_path'] = './client/';
         $config['allowed_types'] = 'jpg|jpeg|png|gif';

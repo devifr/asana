@@ -182,7 +182,7 @@ class Careers extends CI_Controller {
 
       if ($row->count == 0)
       {
-        gagal("You must submit the word that appears in the image");
+        gagal_front("You must submit the word that appears in the image");
         redirect('careers');
       }else{
       $this->form_validation->set_rules('name_lamaran', 'Name', 'required');
@@ -193,7 +193,7 @@ class Careers extends CI_Controller {
 
       if ($this->form_validation->run() == FALSE)
       {
-        gagal(validation_errors());
+        gagal_front(validation_errors());
         // $status = "error";
         // $msg = "Your Input Not Completed";
         redirect('careers');
@@ -219,7 +219,7 @@ class Careers extends CI_Controller {
         $attach = $file1['file_name'];
         if (!$upload1)
         {
-           gagal($this->upload->display_errors());
+           gagal_front($this->upload->display_errors());
            // $status = "error";
            // $msg = "Something Wrong On File You Download";
            redirect('careers');
@@ -239,11 +239,11 @@ class Careers extends CI_Controller {
         'address_lamaran' => $address, 'education_lamaran'=>$education, 'cover_lamaran' => $cover, 'date_apply' => $date_apply,'lampiran_lamaran' => $attach);
         $simpan = $this->lamaran->insert_data($data);
         if($simpan==TRUE){
-          sukses('Career has Saved');
+          sukses_front('Career has Saved');
           $this->sendEmail($email,$id_career);
           redirect('careers');
         }else{
-          gagal('Career Failed to Save');
+          gagal_front('Career Failed to Save');
           redirect('careers');
         }
       }

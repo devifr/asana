@@ -12,11 +12,14 @@
   || PT.ARSANA JAYA UTAMA
   </title>
   <meta charset="utf-8">
+  <?php $this->load->model('config_website_model','config_website'); ?>
+  <?php $bhs = $this->lang->lang(); ?>
+  <?php $config = $this->config_website->get_by_id('1', $bhs)->row(); ?>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Envor HTML5/CSS3 Template">
-  <meta name="author" content="Suono Libero ( @rivathemes.com )">
-  <link rel="shortcut icon" href="<?php echo images_url('favicon.ico'); ?>">
+  <meta name="description" content="<?php echo $config->meta_description ; ?>">
+  <meta name="author" content="<?php echo $config->website_name; ?>">
+  <link rel="shortcut icon" href="<?php echo images_url('favicon.png'); ?>">
   <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
   <!-- Bootstrap core CSS -->

@@ -43,6 +43,7 @@ class Content_model extends CI_Model {
         if($bhs!=NULL){
             $this->db->where('alias_bahasa',$bhs);
         }
+        $this->db->where('active_content','1');
         $query = $this->db->get('content');
         return $query;
     }

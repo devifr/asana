@@ -33,9 +33,9 @@
           echo "<option value='$bhs->id_bahasa'>$bhs->nama_bahasa</option>";
           } ?>
         </select></td></tr>
-      <tr><td><b>Tag</b></td><td>
+      <!-- <tr><td><b>Tag</b></td><td>
         <input type="text" name="tag_banner" id="tag" value="">
-      </td></tr>
+      </td></tr> -->
       <tr><td><b>Description</b></td><td>
         <textarea name="description" id="description"></textarea>
       </td></tr>

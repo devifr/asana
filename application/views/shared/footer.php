@@ -4,9 +4,9 @@
       <div class="row">
         <div class="col-lg-4 col-md-4">
           <div class="envor-widget">
-            <h3><strong><?php echo $about_us->judul_content; ?></strong></h3>
+            <h3><strong><?php if($about_us) echo $about_us->judul_content; ?></strong></h3>
             <div class="envor-widget-inner">
-              <?php echo str_replace('src="../../../', 'src="../../../../', $about_us->description); ?>
+              <?php if($about_us) echo str_replace('src="../../../', 'src="../../../../', $about_us->description); ?>
             </div>
           </div>
         </div>
@@ -19,20 +19,20 @@
                 <article class="envor-post-preview">
                   <div class="envor-post-preview-inner">
                     <strong>
-                      <a href=""><?php echo $vision->judul_content; ?></a>
+                      <a href=""><?php if($vision) echo $vision->judul_content; ?></a>
                     </strong>
                     <p>
-                      <?php echo str_replace('src="../../../', 'src="../../../../', $vision->description); ?>
+                      <?php if($vision) echo str_replace('src="../../../', 'src="../../../../', $vision->description); ?>
                     </p>
                   </div>
                 </article>
                 <article class="envor-post-preview">
                   <div class="envor-post-preview-inner">
                     <strong>
-                      <a href=""><?php echo $mission->judul_content; ?></a>
+                      <a href=""><?php if($mission) echo $mission->judul_content; ?></a>
                     </strong>
                     <p>
-                      <?php echo str_replace('src="../../../', 'src="../../../../', $mission->description); ?>
+                      <?php if($mission) echo str_replace('src="../../../', 'src="../../../../', $mission->description); ?>
                     </p>
                   </div>
                 </article>
@@ -52,7 +52,7 @@
             <div class="envor-widget-inner">
               <div class="margin-bottom20">
                 <b><?php echo lang('address'); ?></b>
-                <br>
+                <!-- <br> -->
                 <?php echo $config->address; ?>
               </div>
               <div class="margin-bottom20">

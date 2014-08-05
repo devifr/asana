@@ -38,22 +38,24 @@
   </div>
 </section>
 <?php $bhs = $this->lang->lang(); ?>
-<section class="envor-section envor-section-st1 envor-section-align-center">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <h2>
-          <strong>PT.ARSANA JAYA UTAMA</strong>
-          <br>
-          <span class='font16'>Smart IT Solutions</span>
-        </h2>
-        <p><?php echo substr($about_us->description, 0, 430); ?></p>
-        <p>
-          <a href="<?php echo base_url("$bhs/page/about_us"); ?>" class="envor-btn envor-btn-primary envor-btn-normal">
-            <i class="glyphicon glyphicon-question-sign"></i> <?php echo lang('view-more'); ?>
-          </a>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+<?php
+//   echo '<section class="envor-section envor-section-st1 envor-section-align-center">
+//   <div class="container">
+//     <div class="row">
+//       <div class="col-lg-12">
+//         <h2>
+//           <strong>PT.ARSANA JAYA UTAMA</strong>
+//           <br>
+//           <span class='font16'>Smart IT Solutions</span>
+//         </h2>
+//         <p></p>
+//         <p>
+//           <a href="" class="envor-btn envor-btn-primary envor-btn-normal">
+//             <i class="glyphicon glyphicon-question-sign"></i>
+//           </a>
+//         </p>
+//       </div>
+//     </div>
+//   </div>
+// </section>';
+?>

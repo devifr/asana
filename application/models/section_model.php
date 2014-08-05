@@ -34,6 +34,12 @@ class Section_model extends CI_Model {
         return $query;
     }
 
+    function insert_data($data)
+    {
+        $insert = $this->db->insert('section', $data);
+        return $insert;
+    }
+
     function update($id,$data)
     {
         $this->db->where('id_section',$id);

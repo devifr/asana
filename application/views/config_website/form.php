@@ -1,3 +1,5 @@
+<script type="text/javascript" src="<?php echo base_url('asset/js/tiny_mce/tiny_mce.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('asset/js/tiny_mce/show_tiny_mce_for_edit.js'); ?>"></script>
 
 <div id="wrapper">
   <div id="rightContent">
@@ -24,13 +26,14 @@
 			<tr><td width="125px"><b>Website Name</b></td><td><input type="text" name="web_name" class="sedang" value="<?php echo $row->website_name; ?>"></td></tr>
 			<tr><td><b>Meta Header</b></td><td><input type="text" name="meta_head" class="panjang" value="<?php echo $row->meta_header; ?>"></td></tr>
       <tr><td><b>Meta Description</b></td><td><textarea name="meta_desc"><?php echo $row->meta_description; ?></textarea></td></tr>
-      <tr><td><b>Icon Website</b></td><td><input type="file" name="icon" class="sedang">
+      <!-- <tr><td><b>Icon Website</b></td><td><input type="file" name="icon" class="sedang">
         <input type="hidden" name="icon2" class="sedang" value="<?php echo $row->icon_name; ?>"></td></tr>
       <tr><td><b>Logo Website</b></td><td><input type="file" name="logo" class="sedang">
-        <input type="hidden" name="logo2" class="sedang" value="<?php echo $row->logo_name; ?>"></td></tr>
+        <input type="hidden" name="logo2" class="sedang" value="<?php echo $row->logo_name; ?>"></td></tr> -->
+			<tr><td><b>Address</b></td><td><textarea name="address"><?php echo $row->address; ?></textarea></td></tr>
       <tr><td><b>Email Contact</b></td><td><input type="text" name="email" class="sedang" value="<?php echo $row->email_contact; ?>"></td></tr>
-			<tr><td><b>Email Lamaran</b></td><td><input type="text" name="email_lamaran" class="sedang" value="<?php echo $row->email_lamaran; ?>"></td></tr>
-			<tr><td><b>Footer</b></td><td><textarea name="footer"><?php echo $row->footer; ?></textarea></td></tr>
+      <tr><td><b>Email Lamaran</b></td><td><input type="text" name="email_lamaran" class="sedang" value="<?php echo $row->email_lamaran; ?>"></td></tr>
+      <tr><td><b>Footer</b></td><td><textarea name="footer"><?php echo $row->footer; ?></textarea></td></tr>
       <tr><td></td><td><input type="submit" class="button" value="Save">
 			<input type="reset" class="button" value="Reset">
 			</td></tr>
@@ -45,6 +48,7 @@
 			<tr><td width="107"><b>Website Name</b></td><td width="220"><?php echo $row->website_name; ?></td></tr>
 			<tr><td><b>Meta Header</b></td><td><?php echo $row->meta_header; ?></td></tr>
       <tr><td><b>Meta Description</b></td><td><?php echo $row->meta_description; ?></td></tr>
+      <tr><td><b>Address</b></td><td><?php echo $row->address; ?></td></tr>
       <tr><td><b>Email Contact</b></td><td><?php echo $row->email_contact; ?></td></tr>
 			<tr><td><b>Email Lamaran</b></td><td><?php echo $row->email_lamaran; ?></td></tr>
 			<tr><td><b>Footer</b></td><td><?php echo $row->footer; ?></td></tr>

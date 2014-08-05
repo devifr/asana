@@ -35,10 +35,10 @@
       </div>
       <div class="form-group">
         <label class="control-label">Cover Letter</label>
-        <textarea name="cover" id="cover" class="form-control">
+        <textarea name="cover" id="cover" class="form-control" style="height: 250px;">
               Dear Sir/Madam,
 
-              I wish to apply for the position above, as advertised on Jobstreet.com on 13 March 2013.
+              I wish to apply for the position above, as advertised on arsanajaya.com on <?php echo date('d F Y') ?>.
 
               [Please add your message here.]
 

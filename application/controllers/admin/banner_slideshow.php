@@ -8,7 +8,7 @@ class Banner_slideshow extends CI_Controller {
     $this->load->model('banner_slideshow_model','banner');
     $this->load->model('bahasa_model','bahasa');
     $this->load->library('simpleAuth');
-    // $this->output->enable_profiler(TRUE);
+    $this->output->enable_profiler(TRUE);
   }
 
   public function index()

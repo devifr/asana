@@ -613,7 +613,7 @@
 		if ($(this).find('img').height() > envorLogoH) {
 			envorLogoH = $(this).height();
 		}
-	}).height(envorLogoH - parseInt($('.envor-partner-logo .inner').css('padding-left')) - parseInt($('.envor-partner-logo .inner').css('padding-right'))).hover(function() {
+	}).hover(function() {
 		$(this).find('img').stop(true,true).fadeTo(400, 1);
 	}, function() {
 		$(this).find('img').stop(true,true).fadeTo(400, 0.3);

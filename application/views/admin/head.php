@@ -11,7 +11,7 @@
 <meta name="keywords" content="<?php echo $header->meta_header; ?>">
 <meta name="author" content="Arsana">
 <meta name="language" content="Bahasa Indonesia">
-<link rel="shortcut icon" href="<?php echo base_url(); ?>asset/images/icon.png">  <!--Pemanggilan gambar favicon-->
+<link rel="shortcut icon" href="<?php echo base_url(); ?>asset/images/favicon.png">  <!--Pemanggilan gambar favicon-->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/css/admin/mos-css/mos-style.css'); ?>"> <!--pemanggilan file css-->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/css/admin/style.css'); ?>"> <!--pemanggilan file css-->
 <script type="text/javascript" src="<?php echo base_url(); ?>asset/js/jquery.min.js"></script> <!--pemanggilan jquery-->

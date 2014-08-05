@@ -67,6 +67,7 @@ class Config_website extends CI_Controller {
     $this->form_validation->set_rules('web_name', 'Website Name', 'required');
     $this->form_validation->set_rules('meta_head', 'Meta header', 'required');
     $this->form_validation->set_rules('meta_desc', 'Meta Description', 'required');
+    $this->form_validation->set_rules('address', 'Address', 'required');
     $this->form_validation->set_rules('email', 'Email Contact', 'required|valid_email');
     $this->form_validation->set_rules('footer', 'footer', 'required');
 
@@ -87,6 +88,7 @@ class Config_website extends CI_Controller {
       $banner = $this->input->post('banner');
       $banner2 = $this->input->post('banner2');
       $email = $this->input->post('email');
+      $address = $this->input->post('address');
       $email_lamaran = $this->input->post('email_lamaran');
       $footer = $this->input->post('footer');
       //upload gambar
@@ -126,7 +128,7 @@ class Config_website extends CI_Controller {
         }
 
       $data = array('website_name' =>$web_name,'meta_header' =>$meta_head,'meta_description' =>$meta_desc,'icon_name' =>$icon,
-        'logo_name' =>$logo, 'email_contact' =>$email, 'email_lamaran' =>$email_lamaran,'footer' =>$footer);
+        'logo_name' =>$logo, 'email_contact' =>$email, 'email_lamaran' =>$email_lamaran,'footer' =>$footer,'address' =>$address);
       $update = $this->con_web->update($data);
       if($update==TRUE){
           sukses('Data has Saved');

@@ -12,7 +12,7 @@ body {
 	background-image: url(../../images/breadcrumbs/solutions.jpg)!important;
 }
 .section_services{
-	background-image: url(../../images/breadcrumbs/services.jpg)!important;	
+	background-image: url(../../images/breadcrumbs/services.jpg)!important;
 }
 .section_profile{
 	background-image: url(../../images/breadcrumbs/overview.jpg)!important;
@@ -1798,7 +1798,7 @@ input[type=submit], input[type=file], input[type=button], button[type=submit], b
 	width: 100%;
 	float: left;
 	position: relative;
-	padding-top: 45px;
+	padding-top: 5px;
 	margin-bottom: 15px;
 }
 .envor-contacts-widget p .fa, .envor-contacts-widget p .glyphicon {

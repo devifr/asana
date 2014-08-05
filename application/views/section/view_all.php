@@ -53,11 +53,22 @@ $(document).ready(function(){
  <div id="wrapper">
   <div id="rightContent">
   <div id="navigasi">
-
+    <table width="100%" border="0">
+      <tr>
+        <td width="70%">&nbsp;</td>
+        <td width="6%"><div align="center"><a href="<?php echo base_url('admin/section/input/');?>"><img src="<?php echo base_url('asset/images/admin/img/add.png');?>" width="40"></a></div></td>
+        <td width="6%"><div align="center"><a href="#" id='delete'><img src="<?php echo base_url('asset/images/admin/img/trash.png');?>" width="40"></a></div></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><div align="center" id="blue">Add Section </div></td>
+        <td><div align="center" id="blue">Trash</div></td>
+      </tr>
+    </table>
   </div>
   <?php echo $this->session->flashdata('msg'); ?>
   <div id="tbl">
-  <h3>Category Manager</h3>
+  <h3>Section Manager</h3>
     <div id="tablewrapper">
         <div id="tableheader">
       `<div class="search">

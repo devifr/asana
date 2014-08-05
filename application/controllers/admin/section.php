@@ -20,6 +20,17 @@ class Section extends CI_Controller {
     $this->load->view('admin/footer');
   }
 
+  // public function input()
+  // {
+  //   $cekLogin = $this->simpleauth->cekBelumLogin();
+  //   $data['bahasa'] = $this->bahasa->get_all()->result();
+  //   $this->load->view('admin/head');
+  //   $this->load->view('admin/header');
+  //   $this->load->view('admin/menu');
+  //   $this->load->view('section/input', $data);
+  //   $this->load->view('admin/footer');
+  // }
+
   public function edit($id_encrypt)
   {
     $cekLogin = $this->simpleauth->cekBelumLogin();
@@ -32,6 +43,34 @@ class Section extends CI_Controller {
     $this->load->view('section/edit',$data);
     $this->load->view('admin/footer');
   }
+
+  // public function save_data()
+  // {
+  //     $cekLogin = $this->simpleauth->cekBelumLogin();
+  //     $this->form_validation->set_rules('title', 'Category Name', 'required');
+  //     $this->form_validation->set_rules('description', 'Description', 'required');
+  //     $this->form_validation->set_rules('bahasa', 'Language', 'required');
+
+  //     if ($this->form_validation->run() == FALSE)
+  //     {
+  //       gagal(validation_errors());
+  //       redirect('admin/section/input/');
+  //     }
+  //     else
+  //     {
+  //       $title = $this->input->post('title');
+  //       $description = $this->input->post('description');
+  //       $bahasa = $this->input->post('bahasa');
+  //       $data = array('title' => $title ,'description' => $description, 'bahasa_id' => $bahasa);
+  //       $simpan = $this->section->insert_data($data);
+  //       if($simpan==TRUE){
+  //         sukses('Section has Saved');
+  //       }else{
+  //         gagal('Section Failed to Save');
+  //       }
+  //       redirect('admin/section/input/');
+  //     }
+  // }
 
   public function update_data($id_encrypt)
   {
